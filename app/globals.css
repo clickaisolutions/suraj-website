@@ -67,10 +67,12 @@ body {
 
 .brand-logo {
   display: block;
-  width: 180px;
-  height: 88px;
-  object-fit: cover;
+  width: 170px;
+  height: auto;
+  max-height: 72px;
+  object-fit: contain;
   object-position: center;
+  background: transparent;
 }
 
 .main-nav {
@@ -620,8 +622,8 @@ a:focus-visible {
   }
 
   .brand-logo {
-    width: 148px;
-    height: 78px;
+    width: 142px;
+    max-height: 60px;
   }
 
   .main-nav {
