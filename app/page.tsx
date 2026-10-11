@@ -24,7 +24,7 @@ export default function Home() {
         </div>
 
         <h1 className="maintenance-title" id="maintenance-title">
-          Site is under maintenance - Suraj Tambe
+          Site is under maintenance
         </h1>
         <p className="maintenance-description">
           We&apos;re working hard to improve the user experience. Stay tuned!
