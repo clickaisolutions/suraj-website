@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const services = [
   {
     number: "01",
@@ -66,13 +68,14 @@ export default function Home() {
     <main className="site-shell">
       <header className="site-header">
         <a aria-label="ClickAI Solutions home" className="brand" href="#home">
-          <span aria-hidden="true" className="brand-symbol">
-            <span />
-          </span>
-          <span className="brand-wordmark">
-            <span className="brand-name"><span>Click</span><span>AI</span></span>
-            <span className="brand-subtitle">SOLUTIONS</span>
-          </span>
+          <Image
+            alt="ClickAI Solutions"
+            className="brand-logo"
+            height={5000}
+            priority
+            src="/Logo.png"
+            width={5000}
+          />
         </a>
 
         <nav aria-label="Main navigation" className="main-nav">
@@ -170,8 +173,13 @@ export default function Home() {
         </div>
         <div className="footer-bottom">
           <a aria-label="ClickAI Solutions home" className="brand brand-footer" href="#home">
-            <span aria-hidden="true" className="brand-symbol"><span /></span>
-            <span className="brand-wordmark"><span className="brand-name"><span>Click</span><span>AI</span></span><span className="brand-subtitle">SOLUTIONS</span></span>
+            <Image
+              alt="ClickAI Solutions"
+              className="brand-logo"
+              height={5000}
+              src="/Logo.png"
+              width={5000}
+            />
           </a>
           <p>Thoughtful marketing for what&apos;s next.</p>
           <a href="https://wa.me/qr/LD2H56H34KFJN1?s=p" target="_blank" rel="noopener noreferrer">Get in touch</a>
