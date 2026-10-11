@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "ClickAI Solutions | Digital Marketing for Growth",
   description:
     "ClickAI Solutions brings SEO, social media, content, design, video, and AI marketing together to help your brand grow.",
+  icons: {
+    icon: "/logo-3.png",
+    shortcut: "/logo-3.png",
+    apple: "/logo-3.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
