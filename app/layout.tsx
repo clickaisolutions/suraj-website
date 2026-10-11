@@ -13,9 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "We’re Making Things Awesome",
-  description:
-    "Our website is taking a little break while we polish things up. Thanks for your patience.",
+  title: "Site is Under Maintenance",
+  description: "We’re working hard to improve the user experience. Stay tuned!",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
