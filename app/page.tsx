@@ -31,7 +31,12 @@ export default function Home() {
         </p>
 
         <div className="maintenance-actions">
-          <a className="maintenance-button" href="mailto:clickaisolutions@gmail.com">
+          <a
+            className="maintenance-button"
+            href="https://wa.me/qr/LD2H56H34KFJN1?s=p"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Contact Us
           </a>
           <button
