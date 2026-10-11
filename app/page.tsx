@@ -73,7 +73,7 @@ export default function Home() {
             className="brand-logo"
             height={5000}
             priority
-            src="/Logo.png"
+            src="/logo-3.png"
             width={5000}
           />
         </a>
@@ -177,7 +177,7 @@ export default function Home() {
               alt="ClickAI Solutions"
               className="brand-logo"
               height={5000}
-              src="/Logo.png"
+              src="/logo-3.png"
               width={5000}
             />
           </a>
