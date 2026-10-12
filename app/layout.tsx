@@ -13,9 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ClickAI Solutions | Digital Marketing for Growth",
+  title: "ClickAi Solutions | AI-Powered Digital Marketing",
   description:
-    "ClickAI Solutions brings SEO, social media, content, design, video, and AI marketing together to help your brand grow.",
+    "Grow your business with ClickAi Solutions. Get expert SEO, AEO, GEO, social media marketing, paid ads, content marketing, and website development services.",
+  openGraph: {
+    title: "ClickAi Solutions | AI-Powered Digital Marketing",
+    description:
+      "Grow your business with ClickAi Solutions. Get expert SEO, AEO, GEO, social media marketing, paid ads, content marketing, and website development services.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "ClickAi Solutions | AI-Powered Digital Marketing",
+    description:
+      "Grow your business with ClickAi Solutions. Get expert SEO, AEO, GEO, social media marketing, paid ads, content marketing, and website development services.",
+  },
   icons: {
     icon: "/clickai-favicon.png",
     shortcut: "/clickai-favicon.png",
