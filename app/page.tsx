@@ -583,6 +583,55 @@ export default function Home() {
             <a href="#contact">Contact Us</a>
           </div>
 
+          <nav aria-label="Social media" className="footer-social-links">
+            <a
+              aria-label="Instagram"
+              href="https://www.instagram.com/clickaisolutions/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <rect
+                  height="18"
+                  rx="5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  width="18"
+                  x="3"
+                  y="3"
+                />
+                <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
+                <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" />
+              </svg>
+            </a>
+            <a
+              aria-label="Facebook"
+              href="https://www.facebook.com/clickaisolutions"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path
+                  d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H7v3.2h2.8V21h3.7Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+            <a
+              aria-label="LinkedIn"
+              href="https://www.linkedin.com/company/clickai-solutions/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path
+                  d="M5.2 7.4a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2ZM3.4 9h3.6v12H3.4V9Zm5.8 0h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5V21h-3.6v-6c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21H9.2V9Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+          </nav>
+
           <p>© 2026 ClickAi Solutions. All Rights Reserved.</p>
         </div>
       </footer>

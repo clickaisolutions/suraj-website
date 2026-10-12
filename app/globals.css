@@ -837,6 +837,7 @@ img {
 
 .footer-bottom {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -851,6 +852,36 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   gap: 18px;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-social-links a {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.footer-social-links a:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.footer-social-links svg {
+  display: block;
+  width: 18px;
+  height: 18px;
 }
 
 .footer-bottom p {
