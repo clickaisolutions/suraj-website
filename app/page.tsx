@@ -146,10 +146,10 @@ export default function Home() {
           <Image
             alt="ClickAi Solutions"
             className="brand-logo"
-            height={682}
+            height={1254}
             priority
-            src="/Full%20logo.png"
-            width={2048}
+            src="/clickai-favicon.png"
+            width={1254}
           />
         </a>
 
@@ -550,9 +550,9 @@ export default function Home() {
             <Image
               alt="ClickAi Solutions"
               className="brand-logo"
-              height={682}
-              src="/Full%20logo.png"
-              width={2048}
+              height={1254}
+              src="/clickai-favicon.png"
+              width={1254}
             />
           </a>
 
