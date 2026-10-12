@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description:
     "ClickAI Solutions brings SEO, social media, content, design, video, and AI marketing together to help your brand grow.",
   icons: {
-    icon: "/Favicon.png",
-    shortcut: "/Favicon.png",
-    apple: "/Favicon.png",
+    icon: "/clickai-favicon.png",
+    shortcut: "/clickai-favicon.png",
+    apple: "/clickai-favicon.png",
   },
 };
 
