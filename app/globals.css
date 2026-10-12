@@ -79,7 +79,7 @@ img {
 
 .brand-logo {
   display: block;
-  width: 72px;
+  width: 170px;
   height: auto;
   max-height: 72px;
   object-fit: contain;
@@ -933,7 +933,7 @@ summary:focus-visible {
   }
 
   .brand-logo {
-    width: 58px;
+    width: 140px;
     max-height: 58px;
   }
 
