@@ -1,4 +1,24 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+const homePageTitle = "ClickAi Solutions | AI-Powered Digital Marketing";
+const homePageDescription =
+  "Grow your business with ClickAi Solutions. Get expert SEO, AEO, GEO, social media marketing, paid ads, content marketing, and website development services.";
+
+export const metadata: Metadata = {
+  title: homePageTitle,
+  description: homePageDescription,
+  openGraph: {
+    title: homePageTitle,
+    description: homePageDescription,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: homePageTitle,
+    description: homePageDescription,
+  },
+};
 
 const services = [
   {
