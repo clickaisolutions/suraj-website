@@ -111,6 +111,7 @@ const processSteps = [
 const industries = [
   "Technology and SaaS",
   "E-commerce and Retail",
+  "Pet Care Industry",
   "Professional Services",
   "Healthcare and Wellness",
   "Hospitality and Travel",
