@@ -318,6 +318,13 @@ export default function Home() {
         </div>
 
         <div className="about-card">
+          <Image
+            alt="A team collaborating around a table"
+            className="about-card-image"
+            height={1799}
+            src="/why-businesses-choose-us.jpg"
+            width={1200}
+          />
           <span className="card-badge">Why businesses choose us</span>
           <ul>
             {reasons.map((reason) => (
