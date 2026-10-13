@@ -1244,6 +1244,25 @@ img {
   line-height: 1.75;
 }
 
+.blog-quick-answer {
+  margin-bottom: 28px;
+  padding: 22px 24px;
+  border-left: 3px solid var(--orange);
+  background: var(--mist);
+}
+
+.blog-quick-answer h2 {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+.blog-quick-answer p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
 .blog-article-body section {
   margin-top: 38px;
 }
@@ -1260,6 +1279,68 @@ img {
 .blog-article-body p {
   margin: 0 0 16px;
   color: var(--muted);
+}
+
+.blog-article-body ul {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 18px;
+  padding-left: 22px;
+  color: var(--muted);
+}
+
+.blog-comparison-wrap {
+  overflow-x: auto;
+  margin: 20px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.blog-comparison {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.blog-comparison th,
+.blog-comparison td {
+  min-width: 125px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.blog-comparison thead th {
+  color: var(--ink);
+  background: var(--mist);
+  font-weight: 750;
+}
+
+.blog-comparison tbody th {
+  color: var(--blue-deep);
+  font-weight: 750;
+}
+
+.blog-comparison tbody tr:last-child th,
+.blog-comparison tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.blog-faq {
+  margin-top: 22px;
+}
+
+.blog-faq h3 {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.blog-faq p {
+  margin-bottom: 0;
 }
 
 .blog-article-cta {

@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://clickaisolutions.com"),
   title: "ClickAI Solutions | Digital Marketing for Growth",
   description:
     "ClickAI Solutions brings SEO, social media, content, design, video, and AI marketing together to help your brand grow.",

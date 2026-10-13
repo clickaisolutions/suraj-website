@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="780" viewBox="0 0 1600 780" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="70" y1="60" x2="1460" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F8F7"/>
+      <stop offset="1" stop-color="#DFECEB"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="850" y1="170" x2="1430" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F7FAF9"/>
+    </linearGradient>
+    <filter id="shadow" x="760" y="112" width="758" height="574" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix values="0 0 0 0 0.12 0 0 0 0 0.24 0 0 0 0 0.25 0 0 0 0.13 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="780" rx="30" fill="url(#bg)"/>
+  <circle cx="1470" cy="62" r="270" fill="#CFE3DF" opacity=".55"/>
+  <circle cx="144" cy="733" r="210" fill="#F8D7B4" opacity=".55"/>
+  <path d="M0 597C214 524 329 658 540 616s327-168 514-107 298 96 546 5v266H0V597Z" fill="#D5E5E2" opacity=".52"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="105" y="113" width="72" height="7" rx="3.5" fill="#E27B44"/>
+    <text x="105" y="180" fill="#316B6B" font-size="19" font-weight="700" letter-spacing="3">THE AEO PLAYBOOK</text>
+    <text x="100" y="295" fill="#17383C" font-size="76" font-weight="700">Be the answer.</text>
+    <text x="100" y="383" fill="#17383C" font-size="76" font-weight="700">Earn the citation.</text>
+    <text x="105" y="451" fill="#557074" font-size="24">Make useful expertise easy to find,</text>
+    <text x="105" y="486" fill="#557074" font-size="24">understand, and trust.</text>
+    <rect x="105" y="548" width="217" height="53" rx="26.5" fill="#17383C"/>
+    <text x="137" y="582" fill="#FFFFFF" font-size="16" font-weight="700">ANSWER ENGINE SEO</text>
+    <g filter="url(#shadow)">
+      <rect x="815" y="160" width="630" height="466" rx="20" fill="url(#panel)"/>
+      <rect x="815.5" y="160.5" width="629" height="465" rx="19.5" stroke="#D7E3E1"/>
+    </g>
+    <circle cx="853" cy="196" r="5" fill="#E27B44"/>
+    <circle cx="871" cy="196" r="5" fill="#E4C768"/>
+    <circle cx="889" cy="196" r="5" fill="#75A89A"/>
+    <rect x="840" y="222" width="580" height="61" rx="12" fill="#F0F5F4"/>
+    <circle cx="872" cy="252" r="10" stroke="#557074" stroke-width="3"/>
+    <path d="m880 260 8 8" stroke="#557074" stroke-width="3" stroke-linecap="round"/>
+    <text x="906" y="259" fill="#557074" font-size="17">How do I optimize content for AEO?</text>
+    <rect x="840" y="309" width="580" height="193" rx="14" fill="#FFFFFF" stroke="#E3EBE9"/>
+    <rect x="864" y="334" width="112" height="25" rx="12.5" fill="#EAF3F1"/>
+    <text x="879" y="351" fill="#316B6B" font-size="11" font-weight="700" letter-spacing="1">DIRECT ANSWER</text>
+    <text x="864" y="392" fill="#17383C" font-size="20" font-weight="700">Lead with a clear, concise response.</text>
+    <rect x="864" y="411" width="492" height="8" rx="4" fill="#D6E2E0"/>
+    <rect x="864" y="431" width="448" height="8" rx="4" fill="#D6E2E0"/>
+    <rect x="864" y="451" width="360" height="8" rx="4" fill="#D6E2E0"/>
+    <rect x="840" y="526" width="276" height="72" rx="12" fill="#F8F4EC"/>
+    <circle cx="870" cy="562" r="14" fill="#E27B44"/>
+    <path d="m864 562 4 4 8-9" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="896" y="556" fill="#17383C" font-size="14" font-weight="700">Structured content</text>
+    <text x="896" y="577" fill="#718184" font-size="12">Clear headings + schema</text>
+    <rect x="1130" y="526" width="290" height="72" rx="12" fill="#ECF3F1"/>
+    <circle cx="1160" cy="562" r="14" fill="#316B6B"/>
+    <path d="M1154 562h12m-6-6v12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <text x="1186" y="556" fill="#17383C" font-size="14" font-weight="700">Trusted sources</text>
+    <text x="1186" y="577" fill="#718184" font-size="12">Expertise + evidence</text>
+  </g>
+</svg>

@@ -5,6 +5,8 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { blogArticles } from "../blog-data";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://clickaisolutions.com";
+
 type BlogArticlePageProps = PageProps<"/blog/[slug]">;
 
 export function generateStaticParams() {
@@ -20,13 +22,25 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
   }
 
   return {
-    title: article.title,
-    description: article.excerpt,
+    title: article.metaTitle ?? article.title,
+    description: article.metaDescription ?? article.excerpt,
+    keywords: article.keywords,
+    alternates: {
+      canonical: `${siteUrl}/blog/${article.slug}`,
+    },
     openGraph: {
-      title: article.title,
-      description: article.excerpt,
+      title: article.metaTitle ?? article.title,
+      description: article.metaDescription ?? article.excerpt,
       type: "article",
       publishedTime: article.dateValue,
+      images: [{ url: article.image, alt: article.imageAlt }],
+      siteName: "ClickAI Solutions",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.metaTitle ?? article.title,
+      description: article.metaDescription ?? article.excerpt,
+      images: [{ url: article.image, alt: article.imageAlt }],
     },
   };
 }
@@ -60,10 +74,87 @@ async function BlogArticleContent({
   }
 
   const relatedArticles = blogArticles.filter((item) => item.slug !== article.slug);
+  const articleUrl = `${siteUrl}/blog/${article.slug}`;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        headline: article.title,
+        description: article.metaDescription ?? article.excerpt,
+        image: [`${siteUrl}${article.image}`],
+        datePublished: article.dateValue,
+        dateModified: article.dateValue,
+        author: {
+          "@type": "Organization",
+          name: "ClickAI Solutions",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "ClickAI Solutions",
+          logo: {
+            "@type": "ImageObject",
+            url: `${siteUrl}/clickai-favicon.png`,
+          },
+        },
+        mainEntityOfPage: articleUrl,
+        articleSection: article.category,
+        keywords: article.keywords?.join(", "),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+          { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
+        ],
+      },
+      ...(article.sections.some((section) => /^\d\./.test(section.heading))
+        ? [
+            {
+              "@type": "HowTo",
+              name: article.title,
+              description: article.quickAnswer ?? article.excerpt,
+              step: article.sections
+                .filter((section) => /^\d\./.test(section.heading))
+                .map((section, index) => ({
+                  "@type": "HowToStep",
+                  position: index + 1,
+                  name: section.heading,
+                  text: section.paragraphs.join(" "),
+                })),
+            },
+          ]
+        : []),
+      ...(article.sections.some((section) => section.faqs?.length)
+        ? [
+            {
+              "@type": "FAQPage",
+              mainEntity: article.sections.flatMap((section) =>
+                (section.faqs ?? []).map((faq) => ({
+                  "@type": "Question",
+                  name: faq.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                  },
+                })),
+              ),
+            },
+          ]
+        : []),
+    ],
+  };
 
   return (
     <main className="blog-page">
       <article className="blog-article">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+          }}
+        />
         <nav aria-label="Breadcrumb" className="blog-breadcrumbs">
           <Link href="/">Home</Link>
           <span aria-hidden="true">/</span>
@@ -117,12 +208,53 @@ async function BlogArticleContent({
           </aside>
 
           <div className="blog-article-body">
+            {article.quickAnswer && (
+              <aside className="blog-quick-answer" aria-label="Quick answer">
+                <h2>Quick Answer</h2>
+                <p>{article.quickAnswer}</p>
+              </aside>
+            )}
             <p>{article.intro}</p>
             {article.sections.map((section, index) => (
               <section id={`section-${index + 1}`} key={section.heading}>
                 <h2>{section.heading}</h2>
                 {section.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
+                ))}
+                {section.bullets && (
+                  <ul>
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
+                {section.comparison && (
+                  <div className="blog-comparison-wrap">
+                    <table className="blog-comparison">
+                      <thead>
+                        <tr>
+                          {section.comparison.headers.map((header) => (
+                            <th key={header} scope="col">{header}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {section.comparison.rows.map((row) => (
+                          <tr key={row[0]}>
+                            {row.map((cell, cellIndex) => (
+                              cellIndex === 0 ? <th key={cell} scope="row">{cell}</th> : <td key={cell}>{cell}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+                {section.faqs?.map((faq) => (
+                  <div className="blog-faq" key={faq.question}>
+                    <h3>{faq.question}</h3>
+                    <p>{faq.answer}</p>
+                  </div>
                 ))}
               </section>
             ))}

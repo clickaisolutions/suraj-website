@@ -1,13 +1,28 @@
 export type BlogSection = {
   heading: string;
   paragraphs: string[];
+  bullets?: string[];
+  comparison?: {
+    headers: string[];
+    rows: string[][];
+  };
+  faqs?: BlogFAQ[];
+};
+
+export type BlogFAQ = {
+  question: string;
+  answer: string;
 };
 
 export type BlogArticle = {
   slug: string;
   category: string;
   title: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  keywords?: string[];
   excerpt: string;
+  quickAnswer?: string;
   intro: string;
   date: string;
   dateValue: string;
@@ -19,6 +34,251 @@ export type BlogArticle = {
 };
 
 export const blogArticles: BlogArticle[] = [
+  {
+    slug: "how-to-optimize-content-for-aeo",
+    category: "AI Search & SEO",
+    title: "How to Optimize Content for AEO: A Step-by-Step Guide",
+    metaTitle: "How to Optimize Content for AEO (Answer Engine Optimization) in 2026",
+    metaDescription:
+      "Learn how to optimize content for AEO with 9 practical steps: answer-first writing, schema markup, FAQ structure, E-E-A-T, and more. Get cited by Google AI Overviews, ChatGPT, and Perplexity.",
+    keywords: [
+      "how to optimize content for AEO",
+      "answer engine optimization",
+      "AEO vs SEO",
+      "AEO vs GEO",
+      "optimize for AI search",
+      "featured snippets",
+      "AI Overviews",
+    ],
+    excerpt:
+      "Learn nine practical ways to make your content easier for search engines and AI assistants to understand, extract, and cite.",
+    quickAnswer:
+      "To optimize content for AEO (Answer Engine Optimization), write clear, direct answers to specific questions near the top of your page, structure content with question-based headings, add schema markup, demonstrate real expertise and authority, and keep your information accurate and up to date. This helps search engines and AI assistants like Google AI Overviews, ChatGPT, Perplexity, and Gemini extract your content and cite it as an answer.",
+    intro:
+      "Answer Engine Optimization builds on strong SEO by making useful information easier to identify and reuse. These steps help you serve readers first while creating clear signals for search and AI systems.",
+    date: "October 13, 2026",
+    dateValue: "2026-10-13",
+    readTime: "12 min read",
+    image: "/aeo-answer-engine-banner.svg",
+    imageAlt:
+      "Illustrated answer engine result showing a direct answer, cited sources, and AI search interfaces",
+    takeaways: [
+      "Lead with a concise answer to one clear audience question.",
+      "Use useful structure, accurate schema, and visible expertise to build trust.",
+      "AEO complements SEO and GEO; no format or markup guarantees a citation.",
+    ],
+    sections: [
+      {
+        heading: "What Is AEO (Answer Engine Optimization)?",
+        paragraphs: [
+          "Answer Engine Optimization (AEO) is the practice of structuring and writing content so search engines, voice assistants, and AI-powered tools can find, understand, and present it as a direct answer to a user's question.",
+          "Traditional SEO focuses on helping a page rank in search results. AEO also focuses on making the answer itself useful in featured snippets, People Also Ask results, voice responses, and AI-generated summaries.",
+        ],
+      },
+      {
+        heading: "AEO vs. SEO vs. GEO: What's the Difference?",
+        paragraphs: [
+          "These approaches overlap, and a durable content strategy uses their shared fundamentals rather than treating them as competing tactics.",
+          "In short: SEO helps people find you, AEO makes your answers easy to surface, and GEO helps your expertise earn citations in generative responses. Strong SEO fundamentals support both AEO and GEO.",
+        ],
+        comparison: {
+          headers: ["Term", "Full form", "Main goal", "Where it appears"],
+          rows: [
+            ["SEO", "Search Engine Optimization", "Rank pages in search results", "Google and Bing results"],
+            ["AEO", "Answer Engine Optimization", "Provide direct, extractable answers", "Featured snippets, PAA, voice search, AI answers"],
+            ["GEO", "Generative Engine Optimization", "Earn citations or mentions in generated answers", "ChatGPT, Gemini, Perplexity, Google AI Overviews"],
+          ],
+        },
+      },
+      {
+        heading: "Why Does AEO Matter Now?",
+        paragraphs: [
+          "More questions are answered directly on results pages and inside AI assistants, sometimes without a click through to a website. Clear, credible answers give your expertise a better chance of being discovered in those experiences.",
+          "AEO can help you earn visibility in answer features, build brand recognition, serve conversational searches, and reach people earlier in their decision process. Visibility and trust matter even when a search does not produce an immediate visit.",
+        ],
+      },
+      {
+        heading: "How to Optimize Content for AEO: 9 Steps",
+        paragraphs: [
+          "Use this process to improve a page around a real audience need. Start with one core question, then make the answer and evidence easy to find.",
+        ],
+      },
+      {
+        heading: "1. Start With Question-Based Keyword Research",
+        paragraphs: [
+          "AEO begins with understanding the exact questions your audience asks. Look for searches that begin with what, how, why, when, which, can, and is, then group related questions by intent.",
+          "Prioritize questions with clear intent and realistic competition. Map one primary question to each page so readers and search systems can quickly understand its purpose.",
+        ],
+        bullets: [
+          "Review Google's People Also Ask results and autocomplete suggestions.",
+          "Use research tools such as Ahrefs, Semrush, or AnswerThePublic.",
+          "Filter Google Search Console queries for question words.",
+          "Collect questions from support tickets, sales calls, Reddit, and Quora.",
+        ],
+      },
+      {
+        heading: "2. Lead With a Direct Answer",
+        paragraphs: [
+          "Answer the main question in roughly 40 to 60 words near the top of the page, before adding background or nuance. A concise, self-contained passage is easier for readers to use and for answer systems to interpret.",
+          "For example: Answer Engine Optimization (AEO) is the process of structuring content so search engines and AI assistants can extract it as a direct answer to a user's question. It focuses on clarity, useful structure, and trust signals. Follow the short answer with context, examples, and important qualifications.",
+        ],
+      },
+      {
+        heading: "3. Use Question-Based Headings (H2/H3)",
+        paragraphs: [
+          "Write headings that reflect how people phrase searches. 'Why Is AEO Important for SEO?' is more descriptive than a broad label such as 'AEO Benefits' when it accurately matches the section.",
+          "Keep the heading hierarchy logical: one H1 for the page, H2 headings for main topics, and H3 headings for subtopics. Never force a question into a heading when it makes the writing less clear.",
+        ],
+      },
+      {
+        heading: "4. Structure Content for Easy Extraction",
+        paragraphs: [
+          "Answer systems may use a single passage rather than the whole page. Make each section understandable on its own, with a specific point and enough context to avoid misleading excerpts.",
+        ],
+        bullets: [
+          "Use short paragraphs of two or three sentences where they suit the topic.",
+          "Use numbered lists for processes and bulleted lists for options or tips.",
+          "Use tables when readers need to compare items across the same criteria.",
+          "Define important concepts directly, such as 'AEO is a practice for...'.",
+        ],
+      },
+      {
+        heading: "5. Add Schema Markup (Structured Data)",
+        paragraphs: [
+          "Schema markup gives machines explicit context about a page. Relevant types can include Article or BlogPosting, BreadcrumbList, Organization, Person, and HowTo when the page genuinely describes a how-to process. FAQPage can describe visible question-and-answer content, but Google limits FAQ rich-result visibility and markup does not guarantee a display.",
+          "Use JSON-LD, keep every property consistent with visible page content, and validate it with Google's Rich Results Test or the Schema Markup Validator. Structured data supports understanding; it does not replace useful writing or guarantee a citation.",
+        ],
+      },
+      {
+        heading: "6. Build E-E-A-T Signals",
+        paragraphs: [
+          "Trustworthy answers need trustworthy sources. Demonstrate Experience, Expertise, Authoritativeness, and Trustworthiness with evidence readers can evaluate, not unsupported claims about authority.",
+        ],
+        bullets: [
+          "Add author biographies with relevant, verifiable credentials.",
+          "Cite reputable sources and link to original data when available.",
+          "Include first-hand experience, case studies, and original insights.",
+          "Make About, Contact, and editorial policy information easy to find.",
+          "Build recognition through useful work and credible third-party mentions.",
+        ],
+      },
+      {
+        heading: "7. Keep Content Fresh and Accurate",
+        paragraphs: [
+          "Review important pages on a schedule that fits how quickly their subject changes. Verify statistics, links, examples, and recommendations, and make meaningful updates when the facts or advice have changed.",
+          "Show a visible last-updated date when it helps readers, and ensure dateModified structured data reflects a real update rather than a cosmetic date change.",
+        ],
+      },
+      {
+        heading: "8. Optimize for Natural, Conversational Language",
+        paragraphs: [
+          "People ask questions in ordinary language, including through voice assistants. Write plainly, define jargon, and cover relevant follow-up questions where they belong. Favor clarity over clever phrasing so both people and machines can parse the answer.",
+        ],
+      },
+      {
+        heading: "9. Cover the Technical Basics",
+        paragraphs: [
+          "Even strong content cannot be surfaced if systems cannot access it. Check the technical foundations that make the page available, fast, and usable.",
+        ],
+        bullets: [
+          "Make sure pages are crawlable and indexable; review robots.txt and page directives.",
+          "Check that you are not unintentionally blocking crawlers you want to reach the content.",
+          "Keep load times reasonable and the experience mobile friendly.",
+          "Put important information in accessible HTML text, not only images, PDFs, or client-rendered content.",
+          "Use HTTPS, clear URLs, and useful internal links.",
+        ],
+      },
+      {
+        heading: "How to Optimize for GEO at the Same Time",
+        paragraphs: [
+          "AEO and GEO share an emphasis on useful, trustworthy information. To strengthen the chance of being cited by generative tools, make your contribution distinct and your identity consistent.",
+        ],
+        bullets: [
+          "Publish original data, examples, or insights that add something new.",
+          "Cite credible sources and attribute statistics clearly.",
+          "Use consistent brand details across your website and public profiles.",
+          "Earn relevant third-party mentions through useful work and participation.",
+          "Write specific, factual statements that can be quoted without losing context.",
+          "Connect in-depth pages with topic clusters and clear internal links.",
+        ],
+      },
+      {
+        heading: "AEO Content Checklist",
+        paragraphs: ["Before publishing, confirm that the page is useful, verifiable, and technically accessible."],
+        bullets: [
+          "The main question receives a direct answer near the beginning.",
+          "Headings describe the questions and topics the page actually addresses.",
+          "Lists, tables, or steps make complex information easier to scan where appropriate.",
+          "Related questions are answered in a visible FAQ section when useful.",
+          "Schema markup is accurate, relevant, and validated.",
+          "Author expertise and credible sources are clear to readers.",
+          "Facts are verified and the update date reflects meaningful maintenance.",
+          "The page is crawlable, fast, and usable on mobile devices.",
+        ],
+      },
+      {
+        heading: "How to Measure AEO Success",
+        paragraphs: [
+          "AEO is difficult to measure with one metric, so combine search visibility, audience behavior, and brand signals. Track a consistent set of queries over time and separate observed citations from estimated visibility.",
+        ],
+        bullets: [
+          "Monitor featured snippet and People Also Ask appearances with search tools.",
+          "Review impressions and click trends for question-based queries in Search Console.",
+          "Test relevant questions in AI products and record citations or brand mentions over time.",
+          "Watch branded search growth and direct traffic as supporting signals.",
+          "Review referral visits from AI platforms in your analytics when available.",
+        ],
+      },
+      {
+        heading: "Frequently Asked Questions About AEO",
+        paragraphs: [],
+        faqs: [
+          {
+            question: "What does AEO stand for?",
+            answer:
+              "AEO stands for Answer Engine Optimization. It is the practice of optimizing content so search engines and AI assistants can understand and present it as a direct answer.",
+          },
+          {
+            question: "Is AEO replacing SEO?",
+            answer:
+              "No. AEO builds on SEO. Crawlable, high-quality, authoritative content remains important; AEO adds answer-focused writing and structure to those fundamentals.",
+          },
+          {
+            question: "What is the difference between AEO and GEO?",
+            answer:
+              "AEO focuses on making content a direct answer in snippets, voice search, and answer boxes. GEO focuses on earning citations or references in AI-generated responses from tools such as ChatGPT, Gemini, and Perplexity.",
+          },
+          {
+            question: "How long should an AEO answer be?",
+            answer:
+              "A concise direct answer is often around 40 to 60 words, followed by deeper explanation where the topic needs it. The goal is a self-contained passage, not a rigid word count.",
+          },
+          {
+            question: "Does schema markup guarantee AEO results?",
+            answer:
+              "No. Schema can help systems interpret a page, but it does not guarantee a featured snippet or AI citation. Quality, relevance, accessibility, and authority still matter.",
+          },
+          {
+            question: "How long does AEO take to work?",
+            answer:
+              "Timing varies. Updating an existing page may affect visibility within weeks, while building broader authority and earning citations can take several months of consistent work.",
+          },
+          {
+            question: "Can small websites compete in AEO?",
+            answer:
+              "Yes. A focused site with accurate, specific information and genuine expertise can serve niche questions better than a broader competitor, though results are never guaranteed.",
+          },
+        ],
+      },
+      {
+        heading: "Conclusion: Make Your Content the Clearest Answer",
+        paragraphs: [
+          "Optimizing content for AEO comes down to making it a clear, trustworthy answer to a real question. Research what your audience asks, answer directly, structure each page for comprehension, use accurate schema, demonstrate expertise, and keep the information current.",
+          "Start with one valuable page: improve its opening answer, add useful related questions, validate its structured data, and track what changes. Combine those improvements with sound SEO and GEO practices to support visibility across traditional search, answer features, and AI-generated results.",
+        ],
+      },
+    ],
+  },
   {
     slug: "seo-roadmap-for-growing-businesses",
     category: "SEO & Growth",
