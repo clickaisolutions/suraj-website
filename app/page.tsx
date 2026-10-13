@@ -4,6 +4,8 @@ import Image from "next/image";
 const homePageTitle = "ClickAi Solutions | AI-Powered Digital Marketing";
 const homePageDescription =
   "Grow your business with ClickAi Solutions. Get expert SEO, AEO, GEO, social media marketing, paid ads, content marketing, and website development services.";
+const whatsappUrl =
+  "https://wa.me/918055035039?text=Hi%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.";
 
 export const metadata: Metadata = {
   title: homePageTitle,
@@ -182,7 +184,7 @@ export default function Home() {
 
         <a
           className="header-cta"
-          href="https://wa.me/8055035039"
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -207,7 +209,7 @@ export default function Home() {
           <div className="hero-actions">
             <a
               className="button button-primary"
-              href="https://wa.me/8055035039"
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -324,7 +326,7 @@ export default function Home() {
           </ul>
           <a
             className="button button-primary"
-            href="https://wa.me/8055035039"
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -358,7 +360,7 @@ export default function Home() {
               <p>{service.description}</p>
               <a
                 className="service-link"
-                href="https://wa.me/8055035039"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -394,7 +396,7 @@ export default function Home() {
         <div className="process-cta">
           <a
             className="button button-primary"
-            href="https://wa.me/8055035039"
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -442,7 +444,7 @@ export default function Home() {
           </div>
           <a
             className="button button-primary"
-            href="https://wa.me/8055035039"
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -509,7 +511,7 @@ export default function Home() {
         <div className="cta-actions">
           <a
             className="button button-primary"
-            href="https://wa.me/8055035039"
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -517,7 +519,7 @@ export default function Home() {
           </a>
           <a
             className="button button-secondary"
-            href="https://wa.me/8055035039"
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -539,7 +541,7 @@ export default function Home() {
           <div className="footer-cta-block">
             <a
               className="button button-light"
-              href="https://wa.me/8055035039"
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -555,7 +557,7 @@ export default function Home() {
           </div>
           <div className="contact-card">
             <span>WhatsApp</span>
-            <a href="https://wa.me/8055035039" target="_blank" rel="noopener noreferrer">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
               +91 8055035039
             </a>
           </div>
