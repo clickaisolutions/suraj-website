@@ -1,3 +1,5 @@
+import nodemailer from "nodemailer";
+
 type ContactSubmission = {
   fullName: string;
   email: string;
@@ -83,9 +85,9 @@ export async function POST(request: Request) {
     return Response.json({ success: true });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const sender = process.env.CONTACT_FROM_EMAIL;
-  if (!apiKey || !sender) {
+  const smtpUser = process.env.SMTP_USER;
+  const smtpAppPassword = process.env.SMTP_APP_PASSWORD;
+  if (!smtpUser || !smtpAppPassword) {
     return Response.json(
       { error: "Email delivery is not configured yet. Please contact us by phone or WhatsApp." },
       { status: 503 },
@@ -105,30 +107,26 @@ export async function POST(request: Request) {
   ].join("\n");
 
   try {
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: smtpUser,
+        pass: smtpAppPassword,
       },
-      body: JSON.stringify({
-        from: sender,
-        to: [recipient],
-        reply_to: submission.email,
-        subject: "Website Query",
-        text: emailBody,
-      }),
-      cache: "no-store",
-      signal: AbortSignal.timeout(10000),
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 10000,
     });
 
-    if (!response.ok) {
-      console.error("Contact email provider returned status", response.status);
-      return Response.json(
-        { error: "We couldn’t send your message right now. Please try again shortly." },
-        { status: 502 },
-      );
-    }
+    await transporter.sendMail({
+      from: smtpUser,
+      to: recipient,
+      replyTo: submission.email,
+      subject: "Website Query",
+      text: emailBody,
+    });
 
     return Response.json({ success: true });
   } catch {
