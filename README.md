@@ -18,6 +18,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Contact Form Email
+
+The contact form sends submissions to `clickaisolutions@gmail.com` through Resend. Copy `.env.example` to `.env.local`, then set `RESEND_API_KEY` and `CONTACT_FROM_EMAIL` to a Resend API key and a sender address verified in your Resend account. Keep these values in server-side environment variables in production; never expose them with a `NEXT_PUBLIC_` prefix.
+
+Submissions use the subject `Website Query` and include all form fields. The form reports an error until email delivery is configured.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More

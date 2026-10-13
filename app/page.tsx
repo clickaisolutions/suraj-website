@@ -180,7 +180,7 @@ export default function Home() {
           <a href="#home">Home</a>
           <a href="#about">About Us</a>
           <a href="#services">Our Services</a>
-          <a href="#contact">Contact Us</a>
+          <Link href="/contact">Contact Us</Link>
         </nav>
 
         <a
@@ -591,7 +591,7 @@ export default function Home() {
             <a href="#about">About Us</a>
             <a href="#services">Our Services</a>
             <Link href="/blog">Blog</Link>
-            <a href="#contact">Contact Us</a>
+            <Link href="/contact">Contact Us</Link>
           </div>
 
           <nav aria-label="Social media" className="footer-social-links">

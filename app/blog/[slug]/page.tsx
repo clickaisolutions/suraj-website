@@ -129,7 +129,7 @@ async function BlogArticleContent({
 
             <div className="blog-article-cta">
               <p>Want to put these ideas to work for your business?</p>
-              <Link className="button button-primary" href="/#contact">
+              <Link className="button button-primary" href="/contact">
                 Talk with our team <span aria-hidden="true">↗</span>
               </Link>
             </div>
