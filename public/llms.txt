@@ -1,0 +1,22 @@
+# ClickAi Solutions
+
+> ClickAi Solutions is a digital marketing agency helping businesses grow with AI-assisted strategy and execution across search, social, paid media, content, and web.
+
+## Website
+
+- [Home](https://clickaisolutions.in/): Overview of the agency, approach, industries served, and frequently asked questions.
+- [About](https://clickaisolutions.in/#about): The agency's approach and reasons businesses choose ClickAi Solutions.
+- [Services](https://clickaisolutions.in/#services): SEO, AEO, GEO, social media marketing, performance marketing, email marketing, content marketing, graphic design, video editing, website development, and WhatsApp marketing.
+- [Contact](https://clickaisolutions.in/contact): Contact details and inquiry form.
+
+## Articles
+
+- [How to Optimize Content for AEO: A Step-by-Step Guide](https://clickaisolutions.in/blog/how-to-optimize-content-for-aeo)
+- [A practical SEO roadmap for growing businesses](https://clickaisolutions.in/blog/seo-roadmap-for-growing-businesses)
+- [Turn social media into a source of qualified leads](https://clickaisolutions.in/blog/turn-social-media-into-qualified-leads)
+- [Create content that earns trust and visibility](https://clickaisolutions.in/blog/content-that-earns-trust-and-visibility)
+
+## Contact
+
+- Email: clickaisolutions@gmail.com
+- Phone: +91 8055035039
