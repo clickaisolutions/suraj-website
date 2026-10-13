@@ -85,17 +85,26 @@ async function BlogArticleContent({
         image: [`${siteUrl}${article.image}`],
         datePublished: article.dateValue,
         dateModified: article.dateValue,
+        articleBody: [
+          article.quickAnswer,
+          article.intro,
+          ...article.sections.flatMap((section) => [
+            section.heading,
+            ...section.paragraphs,
+            ...(section.bullets ?? []),
+            ...(section.comparison?.rows.map((row) => row.join(": ")) ?? []),
+            ...(section.faqs?.flatMap(({ question, answer }) => [question, answer]) ?? []),
+          ]),
+        ]
+          .filter(Boolean)
+          .join("\n\n"),
         author: {
           "@type": "Organization",
-          name: "ClickAI Solutions",
+          "@id": `${siteUrl}/#organization`,
         },
         publisher: {
           "@type": "Organization",
-          name: "ClickAI Solutions",
-          logo: {
-            "@type": "ImageObject",
-            url: `${siteUrl}/clickai-favicon.png`,
-          },
+          "@id": `${siteUrl}/#organization`,
         },
         mainEntityOfPage: articleUrl,
         articleSection: article.category,

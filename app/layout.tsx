@@ -12,8 +12,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://clickaisolutions.in";
+
+const organizationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  name: "ClickAi Solutions",
+  url: siteUrl,
+  logo: `${siteUrl}/logo-3.png`,
+  email: "clickaisolutions@gmail.com",
+  telephone: "+91 8055035039",
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: "clickaisolutions@gmail.com",
+      telephone: "+91 8055035039",
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://clickaisolutions.in"),
+  metadataBase: new URL(siteUrl),
   title: "ClickAI Solutions | Digital Marketing for Growth",
   description:
     "ClickAI Solutions brings SEO, social media, content, design, video, and AI marketing together to help your brand grow.",
@@ -57,7 +78,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationStructuredData).replace(/</g, "\\u003c"),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
