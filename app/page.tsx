@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 const homePageTitle = "ClickAi Solutions | AI-Powered Digital Marketing";
 const homePageDescription =
@@ -589,6 +590,7 @@ export default function Home() {
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
             <a href="#services">Our Services</a>
+            <Link href="/blog">Blog</Link>
             <a href="#contact">Contact Us</a>
           </div>
 
