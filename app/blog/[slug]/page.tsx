@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { blogArticles } from "../blog-data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://clickaisolutions.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://clickaisolutions.in";
 
 type BlogArticlePageProps = PageProps<"/blog/[slug]">;
 

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { blogArticles } from "./blog/blog-data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://clickaisolutions.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://clickaisolutions.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
