@@ -185,7 +185,7 @@ export default function Home() {
         }}
       />
       <header className="site-header">
-        <a aria-label="ClickAi Solutions home" className="brand" href="#home">
+        <a aria-label="ClickAi Solutions home" className="brand" href="/">
           <Image
             alt="ClickAi Solutions"
             className="brand-logo"
@@ -197,9 +197,10 @@ export default function Home() {
         </a>
 
         <nav aria-label="Main navigation" className="main-nav">
-          <a href="#home">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#services">Our Services</a>
+          <a href="/">Home</a>
+          <a href="/#about">About Us</a>
+          <a href="/#services">Our Services</a>
+          <Link href="/blog">Blog</Link>
           <Link href="/contact">Contact Us</Link>
         </nav>
 
