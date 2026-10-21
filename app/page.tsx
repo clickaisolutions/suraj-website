@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SiteHeader } from "./site-chrome";
 
 const homePageTitle = "ClickAi Solutions | AI-Powered Digital Marketing";
 const homePageDescription =
@@ -177,42 +178,15 @@ export default function Home() {
   };
 
   return (
-    <main className="site-shell">
+    <>
+      <SiteHeader activePage="home" />
+      <main className="site-shell">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqStructuredData).replace(/</g, "\\u003c"),
         }}
       />
-      <header className="site-header">
-        <a aria-label="ClickAi Solutions home" className="brand" href="/">
-          <Image
-            alt="ClickAi Solutions"
-            className="brand-logo"
-            height={212}
-            priority
-            src="/logo-3.png"
-            width={588}
-          />
-        </a>
-
-        <nav aria-label="Main navigation" className="main-nav">
-          <a href="/">Home</a>
-          <a href="/#about">About Us</a>
-          <a href="/#services">Our Services</a>
-          <Link href="/blog">Blog</Link>
-          <Link href="/contact">Contact Us</Link>
-        </nav>
-
-        <a
-          className="header-cta"
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Get a Free Consultation <span aria-hidden="true">+</span>
-        </a>
-      </header>
 
       <section aria-labelledby="hero-title" className="hero" id="home">
         <div className="hero-copy">
@@ -667,6 +641,7 @@ export default function Home() {
           <p>© 2026 ClickAi Solutions. All Rights Reserved.</p>
         </div>
       </footer>
-    </main>
+      </main>
+    </>
   );
 }

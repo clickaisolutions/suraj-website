@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 type SiteHeaderProps = {
-  activePage?: "blog" | "contact";
+  activePage?: "home" | "blog" | "contact";
 };
 
 export function SiteHeader({ activePage }: SiteHeaderProps) {
@@ -20,7 +20,9 @@ export function SiteHeader({ activePage }: SiteHeaderProps) {
       </Link>
 
       <nav aria-label="Main navigation" className="main-nav">
-        <Link href="/">Home</Link>
+        <Link aria-current={activePage === "home" ? "page" : undefined} href="/">
+          Home
+        </Link>
         <Link href="/#about">About Us</Link>
         <Link href="/#services">Our Services</Link>
         <Link aria-current={activePage === "blog" ? "page" : undefined} href="/blog">
