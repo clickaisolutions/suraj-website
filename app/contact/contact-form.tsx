@@ -57,11 +57,11 @@ export default function ContactForm() {
       </div>
 
       <div aria-hidden="true" className="contact-honeypot">
-        <label htmlFor="contact-website">Leave this field empty</label>
+        <label htmlFor="contact-honeypot">Leave this field empty</label>
         <input
           autoComplete="off"
-          id="contact-website"
-          name="website"
+          id="contact-honeypot"
+          name="honeypot"
           tabIndex={-1}
           type="text"
         />
