@@ -75,6 +75,13 @@ async function BlogArticleContent({
 
   const relatedArticles = blogArticles.filter((item) => item.slug !== article.slug);
   const articleUrl = `${siteUrl}/blog/${article.slug}`;
+  const howToSteps = article.sections.flatMap((section) =>
+    section.steps?.length
+      ? section.steps.map(({ name, text }) => ({ name, text }))
+      : /^\d\./.test(section.heading)
+        ? [{ name: section.heading, text: section.paragraphs.join(" ") }]
+        : [],
+  );
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -92,6 +99,7 @@ async function BlogArticleContent({
             section.heading,
             ...section.paragraphs,
             ...(section.bullets ?? []),
+            ...(section.steps?.flatMap(({ name, text }) => [name, text]) ?? []),
             ...(section.comparison?.rows.map((row) => row.join(": ")) ?? []),
             ...(section.faqs?.flatMap(({ question, answer }) => [question, answer]) ?? []),
           ]),
@@ -118,20 +126,18 @@ async function BlogArticleContent({
           { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
         ],
       },
-      ...(article.sections.some((section) => /^\d\./.test(section.heading))
+      ...(howToSteps.length
         ? [
             {
               "@type": "HowTo",
               name: article.title,
               description: article.quickAnswer ?? article.excerpt,
-              step: article.sections
-                .filter((section) => /^\d\./.test(section.heading))
-                .map((section, index) => ({
-                  "@type": "HowToStep",
-                  position: index + 1,
-                  name: section.heading,
-                  text: section.paragraphs.join(" "),
-                })),
+              step: howToSteps.map((step, index) => ({
+                "@type": "HowToStep",
+                position: index + 1,
+                name: step.name,
+                text: step.text,
+              })),
             },
           ]
         : []),
@@ -236,6 +242,16 @@ async function BlogArticleContent({
                       <li key={bullet}>{bullet}</li>
                     ))}
                   </ul>
+                )}
+                {section.steps && (
+                  <ol>
+                    {section.steps.map((step) => (
+                      <li key={step.name}>
+                        <strong>{step.name}</strong>
+                        <p>{step.text}</p>
+                      </li>
+                    ))}
+                  </ol>
                 )}
                 {section.comparison && (
                   <div className="blog-comparison-wrap">
