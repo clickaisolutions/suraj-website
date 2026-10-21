@@ -6,7 +6,7 @@ type ContactSubmission = {
   phone: string;
   company: string;
   message: string;
-  website: string;
+  honeypot: string;
 };
 
 const recipient = "clickaisolutions@gmail.com";
@@ -36,7 +36,7 @@ function validateSubmission(value: unknown): ContactSubmission | null {
   const phone = readField(value.phone, 24);
   const company = readField(value.company ?? "", 160);
   const message = readField(value.message, 5000);
-  const website = readField(value.website ?? "", 200);
+  const honeypot = readField(value.honeypot ?? "", 200);
 
   if (
     !fullName ||
@@ -45,7 +45,7 @@ function validateSubmission(value: unknown): ContactSubmission | null {
     !phone ||
     company === null ||
     !message ||
-    website === null
+    honeypot === null
   ) {
     return null;
   }
@@ -61,7 +61,7 @@ function validateSubmission(value: unknown): ContactSubmission | null {
     return null;
   }
 
-  return { fullName, email, phone, company, message, website };
+  return { fullName, email, phone, company, message, honeypot };
 }
 
 export async function POST(request: Request) {
@@ -81,8 +81,11 @@ export async function POST(request: Request) {
     );
   }
 
-  if (submission.website) {
-    return Response.json({ success: true });
+  if (submission.honeypot) {
+    return Response.json(
+      { error: "Please submit the form again without filling hidden fields." },
+      { status: 400 },
+    );
   }
 
   const smtpUser = process.env.SMTP_USER;
@@ -120,7 +123,7 @@ export async function POST(request: Request) {
       socketTimeout: 10000,
     });
 
-    await transporter.sendMail({
+    const result = await transporter.sendMail({
       from: smtpUser,
       to: recipient,
       replyTo: submission.email,
@@ -128,8 +131,33 @@ export async function POST(request: Request) {
       text: emailBody,
     });
 
+    const recipientAccepted = result.accepted?.some(
+      (address) => address.toLowerCase() === recipient,
+    );
+    if (!recipientAccepted) {
+      console.error("Contact email recipient was not accepted by SMTP.", {
+        accepted: result.accepted ?? [],
+        rejected: result.rejected ?? [],
+        messageId: result.messageId,
+      });
+      return Response.json(
+        { error: "Our email service did not accept your message. Please try again shortly." },
+        { status: 502 },
+      );
+    }
+
     return Response.json({ success: true });
-  } catch {
+  } catch (error) {
+    const details = isRecord(error)
+      ? {
+          code: typeof error.code === "string" ? error.code : undefined,
+          command: typeof error.command === "string" ? error.command : undefined,
+          responseCode:
+            typeof error.responseCode === "number" ? error.responseCode : undefined,
+        }
+      : { message: error instanceof Error ? error.message : "Unknown SMTP error" };
+    console.error("Contact email delivery failed.", details);
+
     return Response.json(
       { error: "We couldn’t reach our email service. Please try again shortly." },
       { status: 502 },
