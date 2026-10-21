@@ -212,7 +212,12 @@ export default function Home() {
             >
               Get a Free Consultation <span aria-hidden="true">↗</span>
             </a>
-            <a className="text-link" href="#services">
+            <a
+              className="text-link"
+              href={contactUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Explore Our Services <span aria-hidden="true">↓</span>
             </a>
           </div>
