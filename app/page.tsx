@@ -8,7 +8,7 @@ const homePageDescription =
   "Grow your business with ClickAi Solutions. Get expert SEO, AEO, GEO, social media marketing, paid ads, content marketing, and website development services.";
 const whatsappUrl =
   "https://wa.me/918055035039?text=Hi%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.";
-const contactUrl = "https://clickaisolutions.in/contact";
+const contactUrl = "/contact";
 
 export const metadata: Metadata = {
   title: homePageTitle,
@@ -204,22 +204,12 @@ export default function Home() {
           </p>
 
           <div className="hero-actions">
-            <a
-              className="button button-primary"
-              href={contactUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link className="button button-primary" href={contactUrl}>
               Get a Free Consultation <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              className="text-link"
-              href={contactUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </Link>
+            <Link className="text-link" href={contactUrl}>
               Explore Our Services <span aria-hidden="true">↓</span>
-            </a>
+            </Link>
           </div>
 
           <div className="hero-trust-row" aria-label="Key marketing capabilities">
@@ -333,14 +323,9 @@ export default function Home() {
               <li key={reason}>{reason}</li>
             ))}
           </ul>
-          <a
-            className="button button-primary"
-            href={contactUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link className="button button-primary" href={contactUrl}>
             Discover Our Approach <span aria-hidden="true">↗</span>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -367,14 +352,9 @@ export default function Home() {
               <div className="service-tag">Digital Growth</div>
               <h3>{service.name}</h3>
               <p>{service.description}</p>
-              <a
-                className="service-link"
-                href={contactUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link className="service-link" href={contactUrl}>
                 Explore services <span aria-hidden="true">↗</span>
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -403,14 +383,9 @@ export default function Home() {
         </div>
 
         <div className="process-cta">
-          <a
-            className="button button-primary"
-            href={contactUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link className="button button-primary" href={contactUrl}>
             Start Your Digital Marketing Journey <span aria-hidden="true">↗</span>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -518,14 +493,9 @@ export default function Home() {
         </div>
 
         <div className="cta-actions">
-          <a
-            className="button button-primary"
-            href={contactUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link className="button button-primary" href={contactUrl}>
             Get a Free Consultation <span aria-hidden="true">↗</span>
-          </a>
+          </Link>
           <a
             className="button button-secondary"
             href={whatsappUrl}
