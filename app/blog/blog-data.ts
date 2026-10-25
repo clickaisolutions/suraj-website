@@ -461,8 +461,8 @@ export const blogArticles: BlogArticle[] = [
     date: "October 21, 2026",
     dateValue: "2026-10-21",
     readTime: "8 min read",
-    image: "/blog-content.jpg",
-    imageAlt: "Notes and planning materials on a desk",
+    image: "/aeo-answer-engine-banner.svg",
+    imageAlt: "Answer engine optimization banner about clear answers and trusted citations",
     takeaways: [
       "Compare the exact product editions and hosting models, not just platform names.",
       "Design market ownership, permissions, localization, and compliance requirements before implementation.",
