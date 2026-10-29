@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function BlogIndexPage() {
-  const [featuredArticle, ...latestArticles] = blogArticles;
+  const sortedArticles = [...blogArticles].sort((a, b) =>
+    b.dateValue.localeCompare(a.dateValue),
+  );
+  const [featuredArticle, ...latestArticles] = sortedArticles;
 
   return (
     <main className="blog-page">
