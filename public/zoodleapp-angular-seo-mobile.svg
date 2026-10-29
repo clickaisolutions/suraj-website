@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="background" x1="44" y1="22" x2="755" y2="588" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102F46"/>
+      <stop offset="1" stop-color="#071A29"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="535" y1="332" x2="688" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20C9B0"/>
+      <stop offset="1" stop-color="#53A8E8"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" stroke="#B8D7E5" stroke-opacity=".08"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" rx="24" fill="url(#background)"/>
+  <rect width="800" height="600" rx="24" fill="url(#grid)"/>
+  <circle cx="742" cy="36" r="158" fill="#16B8AA" fill-opacity=".1"/>
+  <rect x="45" y="40" width="129" height="34" rx="17" fill="#193D52"/>
+  <circle cx="65" cy="57" r="5" fill="#27CFB1"/>
+  <text x="80" y="62" fill="#BCEFE6" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1.7">SEO CASE STUDY</text>
+  <text x="45" y="142" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700">How We Fixed</text>
+  <text x="45" y="194" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700">Angular SEO</text>
+  <text x="45" y="246" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700">for ZoodleApp</text>
+  <text x="47" y="282" fill="#B7C9D4" font-family="Arial, Helvetica, sans-serif" font-size="17">From crawl gaps to clearer search signals</text>
+  <rect x="45" y="310" width="710" height="1" fill="#7893A2" fill-opacity=".38"/>
+  <rect x="45" y="340" width="710" height="183" rx="17" fill="#FFFFFF" fill-opacity=".06" stroke="#83B0C2" stroke-opacity=".31"/>
+  <rect x="64" y="359" width="672" height="32" rx="8" fill="#102B3D"/>
+  <circle cx="81" cy="375" r="4" fill="#F4876A"/>
+  <circle cx="94" cy="375" r="4" fill="#F6BC62"/>
+  <circle cx="107" cy="375" r="4" fill="#54D1AC"/>
+  <rect x="122" y="369" width="247" height="12" rx="6" fill="#214457"/>
+  <rect x="65" y="405" width="670" height="98" rx="11" fill="#F4F8FA"/>
+  <rect x="84" y="421" width="190" height="14" rx="5" fill="#D9E7EB"/>
+  <rect x="84" y="447" width="367" height="8" rx="4" fill="#D9E7EB"/>
+  <rect x="84" y="465" width="316" height="8" rx="4" fill="#D9E7EB"/>
+  <circle cx="674" cy="453" r="34" fill="url(#accent)"/>
+  <path d="M659 453h30m-13-13 13 13-13 13" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <text x="46" y="561" fill="#65D9C5" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1">CRAWLABILITY</text>
+  <circle cx="169" cy="556" r="3" fill="#F6A85C"/>
+  <text x="183" y="561" fill="#65D9C5" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1">METADATA</text>
+  <circle cx="285" cy="556" r="3" fill="#F6A85C"/>
+  <text x="299" y="561" fill="#65D9C5" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1">INDEXING</text>
+</svg>

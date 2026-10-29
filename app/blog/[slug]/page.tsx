@@ -22,7 +22,9 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
   }
 
   return {
-    title: article.metaTitle ?? article.title,
+    title: article.metaTitle
+      ? { absolute: article.metaTitle }
+      : article.title,
     description: article.metaDescription ?? article.excerpt,
     keywords: article.keywords,
     alternates: {
@@ -32,15 +34,20 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
       title: article.metaTitle ?? article.title,
       description: article.metaDescription ?? article.excerpt,
       type: "article",
+      url: `${siteUrl}/blog/${article.slug}`,
       publishedTime: article.dateValue,
-      images: [{ url: article.image, alt: article.imageAlt }],
+      images: [
+        { url: article.socialImage ?? article.image, alt: article.imageAlt },
+      ],
       siteName: "ClickAI Solutions",
     },
     twitter: {
       card: "summary_large_image",
       title: article.metaTitle ?? article.title,
       description: article.metaDescription ?? article.excerpt,
-      images: [{ url: article.image, alt: article.imageAlt }],
+      images: [
+        { url: article.socialImage ?? article.image, alt: article.imageAlt },
+      ],
     },
   };
 }
@@ -89,7 +96,7 @@ async function BlogArticleContent({
         "@type": "BlogPosting",
         headline: article.title,
         description: article.metaDescription ?? article.excerpt,
-        image: [`${siteUrl}${article.image}`],
+        image: [`${siteUrl}${article.socialImage ?? article.image}`],
         datePublished: article.dateValue,
         dateModified: article.dateValue,
         articleBody: [
@@ -102,14 +109,20 @@ async function BlogArticleContent({
             ...(section.steps?.flatMap(({ name, text }) => [name, text]) ?? []),
             ...(section.comparison?.rows.map((row) => row.join(": ")) ?? []),
             ...(section.faqs?.flatMap(({ question, answer }) => [question, answer]) ?? []),
+            ...(section.links?.map(({ label }) => label) ?? []),
           ]),
         ]
           .filter(Boolean)
           .join("\n\n"),
-        author: {
-          "@type": "Organization",
-          "@id": `${siteUrl}/#organization`,
-        },
+        author: article.author
+          ? {
+              "@type": "Person",
+              name: article.author,
+            }
+          : {
+              "@type": "Organization",
+              "@id": `${siteUrl}/#organization`,
+            },
         publisher: {
           "@type": "Organization",
           "@id": `${siteUrl}/#organization`,
@@ -188,6 +201,9 @@ async function BlogArticleContent({
           </div>
           <h1>{article.title}</h1>
           <p>{article.excerpt}</p>
+          {article.author && (
+            <p className="blog-article-byline">By {article.author}</p>
+          )}
         </header>
 
         <div className="blog-article-cover">
@@ -294,6 +310,21 @@ async function BlogArticleContent({
                     <p>{faq.answer}</p>
                   </div>
                 ))}
+                {section.links && (
+                  <ul className="blog-source-links">
+                    {section.links.map((link) => (
+                      <li key={link.href}>
+                        <a
+                          href={link.href}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </section>
             ))}
 

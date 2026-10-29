@@ -1460,6 +1460,13 @@ img {
   line-height: 1.75;
 }
 
+.blog-article-header > p.blog-article-byline {
+  margin-top: 12px;
+  color: var(--blue-deep);
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .blog-article-header .blog-meta {
   justify-content: center;
 }
@@ -1581,6 +1588,12 @@ img {
 .blog-article-body .blog-platform-links a {
   color: var(--blue-deep);
   font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.blog-article-body .blog-source-links a {
+  color: var(--blue-deep);
   text-decoration: underline;
   text-underline-offset: 3px;
 }

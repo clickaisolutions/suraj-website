@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="background" x1="72" y1="42" x2="1090" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102F46"/>
+      <stop offset="1" stop-color="#071A29"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="690" y1="195" x2="1095" y2="506" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20C9B0"/>
+      <stop offset="1" stop-color="#53A8E8"/>
+    </linearGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" stroke="#B8D7E5" stroke-opacity=".08"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" rx="26" fill="url(#background)"/>
+  <rect width="1200" height="630" rx="26" fill="url(#grid)"/>
+  <circle cx="1070" cy="79" r="196" fill="#16B8AA" fill-opacity=".09"/>
+  <circle cx="1070" cy="79" r="132" stroke="#5CD5C4" stroke-opacity=".25"/>
+  <rect x="76" y="76" width="129" height="34" rx="17" fill="#193D52"/>
+  <circle cx="96" cy="93" r="5" fill="#27CFB1"/>
+  <text x="111" y="98" fill="#BCEFE6" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1.7">SEO CASE STUDY</text>
+  <text x="76" y="193" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="51" font-weight="700">How We Fixed</text>
+  <text x="76" y="254" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="51" font-weight="700">Angular SEO</text>
+  <text x="76" y="315" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="51" font-weight="700">for ZoodleApp</text>
+  <text x="79" y="367" fill="#B7C9D4" font-family="Arial, Helvetica, sans-serif" font-size="21">From crawl gaps to clearer search signals</text>
+  <rect x="76" y="416" width="535" height="1" fill="#7893A2" fill-opacity=".38"/>
+  <text x="77" y="458" fill="#65D9C5" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="1.3">CRAWLABILITY</text>
+  <circle cx="204" cy="452" r="3" fill="#F6A85C"/>
+  <text x="220" y="458" fill="#65D9C5" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="1.3">METADATA</text>
+  <circle cx="322" cy="452" r="3" fill="#F6A85C"/>
+  <text x="338" y="458" fill="#65D9C5" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="1.3">INDEXING</text>
+  <text x="78" y="555" fill="#A9BAC5" font-family="Arial, Helvetica, sans-serif" font-size="16">A technical SEO field guide by Suraj Tambe</text>
+  <rect x="683" y="163" width="438" height="337" rx="20" fill="#FFFFFF" fill-opacity=".06" stroke="#83B0C2" stroke-opacity=".31"/>
+  <rect x="706" y="186" width="392" height="39" rx="9" fill="#102B3D"/>
+  <circle cx="724" cy="205" r="4" fill="#F4876A"/>
+  <circle cx="738" cy="205" r="4" fill="#F6BC62"/>
+  <circle cx="752" cy="205" r="4" fill="#54D1AC"/>
+  <rect x="780" y="198" width="238" height="14" rx="7" fill="#214457"/>
+  <rect x="714" y="248" width="376" height="225" rx="14" fill="#F4F8FA"/>
+  <rect x="737" y="271" width="171" height="22" rx="6" fill="#D9E7EB"/>
+  <rect x="737" y="309" width="316" height="10" rx="5" fill="#D9E7EB"/>
+  <rect x="737" y="331" width="275" height="10" rx="5" fill="#D9E7EB"/>
+  <rect x="737" y="370" width="100" height="78" rx="11" fill="#E0F5F1"/>
+  <path d="m766 410 15 15 30-34" stroke="#13A88F" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+  <rect x="854" y="373" width="199" height="15" rx="7.5" fill="#C9DAE0"/>
+  <rect x="854" y="401" width="160" height="12" rx="6" fill="#D9E7EB"/>
+  <rect x="854" y="425" width="179" height="12" rx="6" fill="#D9E7EB"/>
+  <circle cx="1081" cy="458" r="48" fill="url(#accent)"/>
+  <path d="M1060 458h39m-16-16 16 16-16 16" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <rect x="943" y="123" width="124" height="39" rx="19.5" fill="#1E4555" stroke="#52C7B4" stroke-opacity=".5"/>
+  <text x="965" y="148" fill="#A9F0E2" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">INDEXABLE</text>
+</svg>
