@@ -34,6 +34,7 @@ export type BlogArticle = {
   dateValue: string;
   readTime: string;
   image: string;
+  mobileImage?: string;
   imageAlt: string;
   takeaways: string[];
   sections: BlogSection[];
@@ -461,8 +462,10 @@ export const blogArticles: BlogArticle[] = [
     date: "October 21, 2026",
     dateValue: "2026-10-21",
     readTime: "8 min read",
-    image: "/aeo-answer-engine-banner.svg",
-    imageAlt: "Answer engine optimization banner about clear answers and trusted citations",
+    image: "/enterprise-multimarket-security-desktop.svg",
+    mobileImage: "/enterprise-multimarket-security-mobile.svg",
+    imageAlt:
+      "Illustration of a protected enterprise content hub connecting secure websites across global markets.",
     takeaways: [
       "Compare the exact product editions and hosting models, not just platform names.",
       "Design market ownership, permissions, localization, and compliance requirements before implementation.",

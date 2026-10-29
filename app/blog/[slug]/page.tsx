@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { blogArticles } from "../blog-data";
+import { BlogImage } from "../blog-image";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://clickaisolutions.in";
 
@@ -191,9 +191,9 @@ async function BlogArticleContent({
         </header>
 
         <div className="blog-article-cover">
-          <Image
+          <BlogImage
             alt={article.imageAlt}
-            fill
+            mobileSrc={article.mobileImage}
             priority
             sizes="(max-width: 760px) 100vw, 1060px"
             src={article.image}
@@ -304,9 +304,9 @@ async function BlogArticleContent({
                 className="blog-card-image"
                 href={`/blog/${relatedArticle.slug}`}
               >
-                <Image
+                <BlogImage
                   alt={relatedArticle.imageAlt}
-                  fill
+                  mobileSrc={relatedArticle.mobileImage}
                   sizes="(max-width: 640px) 100vw, 50vw"
                   src={relatedArticle.image}
                 />

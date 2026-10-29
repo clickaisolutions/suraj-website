@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { blogArticles } from "./blog-data";
+import { BlogImage } from "./blog-image";
 
 export const metadata: Metadata = {
   title: "Digital Marketing Insights",
@@ -36,9 +36,9 @@ export default function BlogIndexPage() {
           className="blog-featured-image"
           href={`/blog/${featuredArticle.slug}`}
         >
-          <Image
+          <BlogImage
             alt={featuredArticle.imageAlt}
-            fill
+            mobileSrc={featuredArticle.mobileImage}
             priority
             sizes="(max-width: 760px) 100vw, 56vw"
             src={featuredArticle.image}
@@ -74,9 +74,9 @@ export default function BlogIndexPage() {
                 className="blog-card-image"
                 href={`/blog/${article.slug}`}
               >
-                <Image
+                <BlogImage
                   alt={article.imageAlt}
-                  fill
+                  mobileSrc={article.mobileImage}
                   sizes="(max-width: 640px) 100vw, 50vw"
                   src={article.image}
                 />
