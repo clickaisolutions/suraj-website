@@ -230,6 +230,19 @@ async function BlogArticleContent({
               </aside>
             )}
             <p>{article.intro}</p>
+            {article.slug === "sitecore-vs-umbraco-enterprise-security-scalability" && (
+              <p className="blog-platform-links">
+                Official platform websites:{" "}
+                <a href="https://www.sitecore.com/" rel="noopener noreferrer" target="_blank">
+                  Sitecore
+                </a>{" "}
+                and{" "}
+                <a href="https://umbraco.com/" rel="noopener noreferrer" target="_blank">
+                  Umbraco
+                </a>
+                .
+              </p>
+            )}
             {article.sections.map((section, index) => (
               <section id={`section-${index + 1}`} key={section.heading}>
                 <h2>{section.heading}</h2>

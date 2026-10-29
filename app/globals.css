@@ -1285,6 +1285,13 @@ img {
   color: var(--muted);
 }
 
+.blog-article-body .blog-platform-links a {
+  color: var(--blue-deep);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .blog-article-body ul {
   display: grid;
   gap: 8px;

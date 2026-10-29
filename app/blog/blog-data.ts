@@ -434,13 +434,13 @@ export const blogArticles: BlogArticle[] = [
     ],
   },
   {
-    slug: "sitecore-or-umbraco-enterprise-multi-market-security-scalability",
+    slug: "sitecore-vs-umbraco-enterprise-security-scalability",
     category: "Technology & Growth",
     title:
       "Enterprise Web Security & Scalability: Why Large Brands Choose Sitecore or Umbraco for Multi-Market Sites",
-    metaTitle: "Sitecore vs Umbraco for Enterprise Multi-Market Sites (2026)",
+    metaTitle: "Sitecore vs Umbraco: Enterprise Security & Scalability",
     metaDescription:
-      "Compare Sitecore and Umbraco for enterprise security, scalability, and multi-market websites. Explore localization, headless delivery, compliance, and costs.",
+      "Compare Sitecore vs Umbraco for enterprise security, scalability, multilingual websites, compliance, and total cost of ownership for global brands.",
     keywords: [
       "Sitecore",
       "Umbraco",
