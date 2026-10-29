@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "./site-chrome";
+import { services } from "./services/service-data";
 
 const homePageTitle = "ClickAi Solutions | AI-Powered Digital Marketing";
 const homePageDescription =
@@ -24,54 +25,6 @@ export const metadata: Metadata = {
     description: homePageDescription,
   },
 };
-
-const services = [
-  {
-    name: "SEO, AEO & GEO",
-    description:
-      "Improve visibility across search engines, answer engines, and generative AI platforms with strategic optimization and structured content.",
-  },
-  {
-    name: "Social Media Marketing",
-    description:
-      "Build a consistent, engaging brand presence that connects with your audience and drives meaningful community growth.",
-  },
-  {
-    name: "Performance Marketing",
-    description:
-      "Launch high-performing ad campaigns that reach the right audience, generate leads, and improve conversions.",
-  },
-  {
-    name: "Email Marketing",
-    description:
-      "Nurture leads and strengthen customer relationships with personalized, strategic email campaigns and automation.",
-  },
-  {
-    name: "Content Marketing",
-    description:
-      "Create expert-driven content that builds trust, answers customer questions, and supports your wider marketing goals.",
-  },
-  {
-    name: "Graphic Design",
-    description:
-      "Produce professional visuals that make your brand stand out across campaigns, social media, and marketing collateral.",
-  },
-  {
-    name: "Video Editing",
-    description:
-      "Transform raw footage into compelling video content tailored for social media, advertising, and brand storytelling.",
-  },
-  {
-    name: "Website Development",
-    description:
-      "Build responsive, SEO-friendly websites that reflect your brand and support your business objectives effectively.",
-  },
-  {
-    name: "WhatsApp Marketing",
-    description:
-      "Use direct, personalized messaging to nurture customers, promote offers, and keep your audience engaged.",
-  },
-];
 
 const reasons = [
   "AI-assisted strategies built for smarter decisions",
@@ -207,7 +160,7 @@ export default function Home() {
             <Link className="button button-primary" href={contactUrl}>
               Get a Free Consultation <span aria-hidden="true">↗</span>
             </Link>
-            <Link className="text-link" href={contactUrl}>
+            <Link className="text-link" href="#services">
               Explore Our Services <span aria-hidden="true">↓</span>
             </Link>
           </div>
@@ -350,10 +303,14 @@ export default function Home() {
           {services.map((service) => (
             <article className="service-item" key={service.name}>
               <div className="service-tag">Digital Growth</div>
-              <h3>{service.name}</h3>
+              <h3>
+                <Link className="service-title-link" href={`/services/${service.slug}`}>
+                  {service.name}
+                </Link>
+              </h3>
               <p>{service.description}</p>
-              <Link className="service-link" href={contactUrl}>
-                Explore services <span aria-hidden="true">↗</span>
+              <Link className="service-link" href={`/services/${service.slug}`}>
+                Explore {service.name} <span aria-hidden="true">↗</span>
               </Link>
             </article>
           ))}
@@ -564,6 +521,15 @@ export default function Home() {
             <Link href="/blog">Blog</Link>
             <Link href="/contact">Contact Us</Link>
           </div>
+
+          <nav aria-label="Our services" className="footer-service-links">
+            <span>Services</span>
+            {services.map((service) => (
+              <Link href={`/services/${service.slug}`} key={service.slug}>
+                {service.name}
+              </Link>
+            ))}
+          </nav>
 
           <nav aria-label="Social media" className="footer-social-links">
             <a

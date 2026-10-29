@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { services } from "./services/service-data";
 
 type SiteHeaderProps = {
-  activePage?: "home" | "blog" | "contact";
+  activePage?: "home" | "blog" | "contact" | "service";
 };
 
 export function SiteHeader({ activePage }: SiteHeaderProps) {
@@ -24,7 +25,12 @@ export function SiteHeader({ activePage }: SiteHeaderProps) {
           Home
         </Link>
         <Link href="/#about">About Us</Link>
-        <Link href="/#services">Our Services</Link>
+        <Link
+          aria-current={activePage === "service" ? "page" : undefined}
+          href="/#services"
+        >
+          Our Services
+        </Link>
         <Link aria-current={activePage === "blog" ? "page" : undefined} href="/blog">
           Blog
         </Link>
@@ -66,6 +72,14 @@ export function SiteFooter() {
           © 2026 ClickAi Solutions. All Rights Reserved.
         </p>
       </div>
+      <nav aria-label="Our services" className="footer-service-links">
+        <span>Services</span>
+        {services.map((service) => (
+          <Link href={`/services/${service.slug}`} key={service.slug}>
+            {service.name}
+          </Link>
+        ))}
+      </nav>
     </footer>
   );
 }
