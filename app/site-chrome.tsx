@@ -63,10 +63,7 @@ export function SiteFooter() {
               width={588}
             />
           </Link>
-          <p>
-            Thoughtful digital marketing to help your business get found, build
-            trust, and grow.
-          </p>
+          <p className="footer-tagline">Your Brand, Our Digital Strategy</p>
         </div>
         <Link className="button button-primary footer-cta" href="/contact">
           Let&apos;s talk <span aria-hidden="true">↗</span>
