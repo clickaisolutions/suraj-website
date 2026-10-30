@@ -93,7 +93,7 @@ async function BlogArticleContent({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
+        "@type": ["BlogPosting", "Article"],
         headline: article.title,
         description: article.metaDescription ?? article.excerpt,
         image: [`${siteUrl}${article.socialImage ?? article.image}`],

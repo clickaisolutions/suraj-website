@@ -45,6 +45,241 @@ export type BlogArticle = {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "structured-data-for-aeo",
+    category: "AI Search & SEO",
+    title: "Can I Use Structured Data to Support an AEO Strategy?",
+    metaTitle: "Structured Data for AEO: Schema Markup Guide",
+    metaDescription:
+      "Learn how structured data supports AEO and GEO. Explore schema markup, JSON-LD, and best practices to improve visibility across AI search.",
+    keywords: [
+      "structured data for AEO",
+      "schema markup for AEO",
+      "AEO and GEO",
+      "JSON-LD",
+      "Article structured data",
+    ],
+    excerpt:
+      "See how accurate structured data can clarify your content for search and AI systems—and where it fits in a useful AEO strategy.",
+    quickAnswer:
+      "Yes, structured data can support an AEO strategy, but it is a helper rather than a ranking switch. JSON-LD gives search engines and AI systems a machine-readable description of a page, its author, publisher, and related entities. It can make content easier to interpret and verify, but it does not guarantee rankings, rich results, or citations in AI Overviews, ChatGPT, or Perplexity.",
+    intro:
+      "Structured data helps machines interpret a page, but strong content and technical SEO remain the foundation. This guide explains which schema types can be useful, what Google says about AI search, and how to implement markup that accurately reflects what readers see.",
+    date: "October 30, 2026",
+    dateValue: "2026-10-30",
+    readTime: "8 min read",
+    image: "/structured-data-for-aeo-banner.svg",
+    imageAlt:
+      "Structured data for AEO illustration showing a JSON-LD document connected to search results",
+    takeaways: [
+      "Use standard Schema.org types that accurately describe visible page content.",
+      "JSON-LD can clarify page type, entities, authorship, and relationships, but cannot guarantee AI citations.",
+      "Validate markup and pair it with useful, crawlable, trustworthy content.",
+    ],
+    sections: [
+      {
+        heading: "What Are AEO, SEO, and GEO?",
+        paragraphs: [
+          "Answer Engine Optimization (AEO) focuses on making useful content easy to surface as a direct answer. Generative Engine Optimization (GEO) focuses on earning citations or mentions in AI-generated responses. Both overlap substantially with Search Engine Optimization (SEO), which helps people discover relevant pages in search.",
+          "Google's guidance treats its generative AI search experiences as part of Search. Think of AEO and GEO as extensions of sound SEO—not replacements for crawlable pages, original information, and a good user experience.",
+        ],
+        comparison: {
+          headers: ["Term", "Stands for", "Goal"],
+          rows: [
+            ["SEO", "Search Engine Optimization", "Rank in traditional search results"],
+            ["AEO", "Answer Engine Optimization", "Be a direct answer in snippets, voice results, and AI answers"],
+            ["GEO", "Generative Engine Optimization", "Be cited or mentioned in AI-generated responses"],
+          ],
+        },
+      },
+      {
+        heading: "How Does Structured Data Help AEO?",
+        paragraphs: [
+          "Structured data is code—often JSON-LD—that labels page content using the Schema.org vocabulary. It can clarify whether a page is an article, identify an organization or author, and describe how those entities relate.",
+          "This context can make content easier for machines to interpret and verify. It is not a direct citation lever: structured data does not guarantee rankings, rich results, or visibility in AI answers, and it works best alongside strong content.",
+        ],
+        bullets: [
+          "Clarifies page type with relevant types such as Article, Organization, or BreadcrumbList.",
+          "Connects entities through consistent identifiers and references.",
+          "Reinforces authorship and publisher context with accurate names and dates.",
+          "Helps systems interpret facts without replacing clear, visible content.",
+        ],
+      },
+      {
+        heading: "What Does Google Say About AI Search and Structured Data?",
+        paragraphs: [
+          "Google's documentation says there is no special schema.org markup required for its AI features. A page must be indexed and eligible to appear in Search with a snippet to be considered as a supporting link in AI Overviews or AI Mode.",
+          "Google recommends established fundamentals: allow crawling, make important information available as text, build strong internal links, provide a good page experience, and ensure structured data matches the visible content. AI search may explore related subtopics, which makes useful depth and clear organization valuable.",
+        ],
+        links: [
+          {
+            label: "Google’s AI features and website guidelines",
+            href: "https://developers.google.com/search/docs/appearance/ai-features",
+          },
+          {
+            label: "Google JavaScript SEO best practices",
+            href: "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+          },
+        ],
+      },
+      {
+        heading: "Which Schema Types Are Useful for AEO and GEO?",
+        paragraphs: [
+          "Choose types based on the content and purpose of the page, not on a promise of extra visibility. Common examples include BlogPosting or Article for a blog post, Organization for a brand, Person for a real author, and BreadcrumbList for site hierarchy.",
+          "Use HowTo only when a page genuinely contains a step-by-step process. FAQPage can describe visible questions and answers, but eligibility and rich-result display can change; write FAQs for readers rather than to chase a search feature.",
+        ],
+        bullets: [
+          "BlogPosting and Article describe editorial content, its headline, dates, author, and publisher.",
+          "Organization identifies a business and can connect its logo and verified profiles.",
+          "BreadcrumbList describes where a page sits in the site hierarchy.",
+          "HowTo describes a real sequence of instructions and steps.",
+          "Product, LocalBusiness, VideoObject, and other types apply only when the corresponding content is present.",
+        ],
+        links: [
+          {
+            label: "Schema.org vocabulary",
+            href: "https://schema.org/",
+          },
+          {
+            label: "Article structured data documentation",
+            href: "https://developers.google.com/search/docs/appearance/structured-data/article",
+          },
+          {
+            label: "Organization structured data",
+            href: "https://developers.google.com/search/docs/appearance/structured-data/organization",
+          },
+        ],
+      },
+      {
+        heading: "What About FAQ Schema?",
+        paragraphs: [
+          "FAQPage remains a valid Schema.org type, but Google has limited the display of FAQ rich results. Its visibility in search should not be the reason to add the markup.",
+          "Keep helpful questions and answers on the page for people and answer systems. Add markup only when it accurately describes that visible content, and check current Google documentation before making implementation decisions.",
+        ],
+      },
+      {
+        heading: "How to Implement Structured Data for AEO",
+        paragraphs: [
+          "Use this practical workflow to add structured data without over-marking pages or relying on stale templates.",
+        ],
+        steps: [
+          {
+            name: "Audit your key pages",
+            text: "Start with your home page, important blog posts, product or service pages, and author pages. Identify the visible information each page needs to describe.",
+          },
+          {
+            name: "Choose accurate types",
+            text: "Select Schema.org types that match the page. Only mark up information readers can find on the page, and avoid adding types just to chase a rich result.",
+          },
+          {
+            name: "Use JSON-LD",
+            text: "Add the structured data in JSON-LD, a format Google recommends and that is straightforward to maintain separately from the visible page layout.",
+          },
+          {
+            name: "Connect entities consistently",
+            text: "Use stable @id values and consistent organization, author, publisher, and sameAs references where they are accurate and available.",
+          },
+          {
+            name: "Validate and monitor",
+            text: "Test the markup before launch, fix errors, and monitor Search Console for indexing and performance changes. A valid test does not guarantee a rich result or AI citation.",
+          },
+          {
+            name: "Keep it fresh",
+            text: "Update dateModified only after a meaningful content change. Review links, facts, and markup as the page evolves.",
+          },
+        ],
+        links: [
+          {
+            label: "JSON-LD documentation",
+            href: "https://json-ld.org/",
+          },
+          {
+            label: "Google Rich Results Test",
+            href: "https://search.google.com/test/rich-results",
+          },
+          {
+            label: "Schema Markup Validator",
+            href: "https://validator.schema.org/",
+          },
+          {
+            label: "Google Search Console Performance Report",
+            href: "https://support.google.com/webmasters/answer/7576553",
+          },
+          {
+            label: "Google structured data guidelines",
+            href: "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
+          },
+        ],
+      },
+      {
+        heading: "Beyond Schema: What Else Drives AEO and GEO?",
+        paragraphs: [
+          "Structured data is one layer of a broader search strategy. Make the page valuable and accessible first, then use markup to describe it accurately.",
+        ],
+        bullets: [
+          "Lead with a direct, self-contained answer under relevant question-based headings.",
+          "Add original examples, data, or first-hand experience instead of repeating generic advice.",
+          "Keep brand and author information consistent across your site and public profiles.",
+          "Make sure important pages are crawlable and their key information is available as text.",
+          "Link to credible sources and keep facts, links, and recommendations current.",
+        ],
+      },
+      {
+        heading: "Common Structured Data Mistakes to Avoid",
+        paragraphs: [],
+        bullets: [
+          "Marking up information that is hidden from or unavailable to readers.",
+          "Expecting schema to guarantee rankings, rich results, or AI citations.",
+          "Adding irrelevant or excessive types that do not describe the page.",
+          "Copying stale examples without checking current documentation.",
+          "Treating perfect markup as a substitute for useful, trustworthy content.",
+        ],
+      },
+      {
+        heading: "Frequently Asked Questions",
+        paragraphs: [],
+        faqs: [
+          {
+            question: "Does structured data directly increase AI Overview citations?",
+            answer:
+              "There is no established guarantee that structured data directly increases citations. Google says no special markup is required for its AI features; structured data can help clarify a page but works indirectly.",
+          },
+          {
+            question: "Is there a special schema for AEO or GEO?",
+            answer:
+              "No. Use standard Schema.org types that accurately describe the content and entities on your page.",
+          },
+          {
+            question: "Should I still add FAQ schema?",
+            answer:
+              "It is optional. FAQPage is a valid type, but do not assume Google will display a FAQ rich result. Focus on useful, visible answers for readers.",
+          },
+          {
+            question: "Does structured data help ChatGPT, Perplexity, or Gemini?",
+            answer:
+              "These systems do not publish a universal schema requirement. Clear markup may help machines interpret a page, but any visibility boost should be treated as unproven.",
+          },
+          {
+            question: "Which format is best: JSON-LD, Microdata, or RDFa?",
+            answer:
+              "JSON-LD is generally straightforward to implement and maintain, and Google recommends it when possible.",
+          },
+          {
+            question: "How do I check whether structured data works?",
+            answer:
+              "Use Google's Rich Results Test and the Schema Markup Validator, then monitor indexing and performance in Google Search Console.",
+          },
+        ],
+      },
+      {
+        heading: "Conclusion: Use Structured Data as a Supporting Layer",
+        paragraphs: [
+          "Structured data is a worthwhile supporting layer for AEO. It helps machines understand page content, entities, and relationships, but it cannot replace useful answers, sound SEO fundamentals, or trustworthy information.",
+          "Use accurate JSON-LD, validate it, and keep it consistent with what readers see. Put the rest of your effort into content that genuinely deserves to be found, understood, and cited.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "how-to-optimize-content-for-aeo",
     category: "AI Search & SEO",
     title: "How to Optimize Content for AEO: A Step-by-Step Guide",
