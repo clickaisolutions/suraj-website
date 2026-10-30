@@ -23,6 +23,7 @@ export type BlogHowToStep = {
 
 export type BlogArticle = {
   slug: string;
+  path?: string;
   category: string;
   title: string;
   metaTitle?: string;
@@ -38,12 +39,504 @@ export type BlogArticle = {
   mobileImage?: string;
   socialImage?: string;
   imageAlt: string;
+  imageCredit?: { label: string; href: string };
   author?: string;
+  authorType?: "Person" | "Organization";
   takeaways: string[];
   sections: BlogSection[];
 };
 
 export const blogArticles: BlogArticle[] = [
+  {
+    slug: "nashik-trimbakeshwar-mahakumbh-2026-27-guide",
+    path: "/nashik-trimbakeshwar-mahakumbh-2026-27-guide",
+    category: "Nashik Travel Guide",
+    title:
+      "Nashik Trimbakeshwar Mahakumbh 2026–27: Shahi Snan Dates, How to Reach, Stay and Sightseeing",
+    metaTitle: "Nashik Mahakumbh 2026–27: Shahi Snan Dates & Travel Guide",
+    metaDescription:
+      "Nashik–Trimbakeshwar Kumbh 2026–27 guide: Amrit Snan dates (2 Aug, 31 Aug, 11–12 Sep 2027), how to reach, where to stay and what to see.",
+    keywords: [
+      "Nashik Mahakumbh 2026–27",
+      "Nashik Kumbh Mela 2027 dates",
+      "Trimbakeshwar Kumbh Mela",
+      "Amrit Snan dates 2027",
+      "Nashik travel guide",
+    ],
+    excerpt:
+      "Plan a visit to the Nashik–Trimbakeshwar Simhastha Kumbh with announced Amrit Snan dates, transport options, stay areas, sightseeing and official travel links.",
+    quickAnswer:
+      "The Nashik–Trimbakeshwar Simhastha Kumbh Mela is scheduled from 31 October 2026 to 24 July 2028. The three principal Amrit Snan (Shahi Snan) dates are 2 August 2027, 31 August 2027, and 11 September 2027 in Nashik / 12 September 2027 in Trimbakeshwar. The main bathing locations are Ramkund in Nashik and Kushavarta Kund in Trimbakeshwar. Confirm dates, access and arrangements with official authorities before travelling.",
+    intro:
+      "The Nashik–Trimbakeshwar Simhastha Mahakumbh is one of Maharashtra’s major religious gatherings. Held roughly once every 12 years, it brings devotees, saints, sadhus and Akharas to the Godavari River, Ramkund in Panchavati and Kushavarta Kund near the Trimbakeshwar Jyotirlinga Temple. This guide covers announced bathing dates, travel by train, road and air, onward transport, accommodation, sightseeing and practical travel tips for the Nashik Mahakumbh 2026–27.",
+    date: "October 30, 2026",
+    dateValue: "2026-10-30",
+    readTime: "12 min read",
+    image: "/nashik-ramkund-makar-sankranti.jpg",
+    socialImage: "/nashik-ramkund-makar-sankranti.jpg",
+    imageAlt:
+      "Pilgrims gathering at Ramkund on the Godavari River in Nashik during Makar Sankranti",
+    imageCredit: {
+      label: "Rohit R Nashik, CC BY-SA 4.0 (Wikimedia Commons)",
+      href: "https://commons.wikimedia.org/wiki/File:Makar_Sankranti_Celebration_at_Ramkund_Nashik_Maharashtra_14_Jan_2025_Rohit_R_Nashik_Photos_1.jpg",
+    },
+    author: "ClickAi Solutions",
+    authorType: "Organization",
+    takeaways: [
+      "The announced principal Amrit Snan dates are 2 August, 31 August and 11–12 September 2027; the 11 September observance is in Nashik and 12 September in Trimbakeshwar.",
+      "Ramkund in Nashik and Kushavarta Kund in Trimbakeshwar are the principal bathing centres.",
+      "Nashik Road is the main railway station; Nashik Airport at Ozar and Mumbai Airport are air-travel options.",
+      "Book early, allow extra time for diversions and shuttles, and confirm arrangements with official authorities.",
+    ],
+    sections: [
+      {
+        heading: "What is the Nashik–Trimbakeshwar Mahakumbh?",
+        paragraphs: [
+          "The Nashik–Trimbakeshwar Simhastha Kumbh Mela is a Hindu pilgrimage held about once every 12 years when Jupiter (Guru) is in Leo (Simha Rashi), giving the festival its name. Pilgrims take part in holy bathing, prayers, processions and spiritual discourses.",
+          "Celebrations take place at two centres. Nashik’s Ramkund is a principal bathing site on the Godavari in Panchavati. Trimbakeshwar, about 28–30 km from Nashik city, is home to one of the twelve Jyotirlingas of Lord Shiva; Kushavarta Kund is near the temple.",
+          "The event is coordinated by the Maharashtra government, the Kumbh Mela Authority, local administrations, police and religious organisations. This is an independent travel guide, not an official government publication. Verify all arrangements and updates with the authorities before setting out.",
+        ],
+        comparison: {
+          headers: ["Event detail", "Information"],
+          rows: [
+            ["Event", "Nashik–Trimbakeshwar Simhastha Kumbh Mela"],
+            ["Scheduled start", "31 October 2026 (flag-hoisting at 12:02 PM)"],
+            ["Main bathing period", "August–September 2027"],
+            ["Bathing locations", "Ramkund (Nashik) and Kushavarta Kund (Trimbakeshwar)"],
+            ["River", "Godavari"],
+            ["State / district", "Maharashtra / Nashik"],
+            ["Major attraction", "Trimbakeshwar Jyotirlinga Temple"],
+            ["Organising body", "Nashik–Trimbakeshwar Kumbh Mela Authority"],
+            ["Ceremonial conclusion", "24 July 2028"],
+          ],
+        },
+        links: [
+          {
+            label: "ClickAi Solutions",
+            href: "https://clickaisolutions.in/",
+          },
+          {
+            label: "ClickAi Solutions",
+            href: "https://clickaisolutions.in/",
+          },
+          {
+            label: "Nashik–Trimbakeshwar Kumbh Mela Authority",
+            href: "https://divcomnashik.maharashtra.gov.in/en/about-nashik-trimbakeshwar-authority/",
+          },
+          {
+            label: "Nashik–Trimbakeshwar Simhastha Kumbh Mela",
+            href: "https://divcomnashik.maharashtra.gov.in/en/simhastha-kumbh-mela-2027/",
+          },
+          {
+            label: "Nashik–Trimbakeshwar Kumbh Mela Authority",
+            href: "https://divcomnashik.maharashtra.gov.in/en/about-nashik-trimbakeshwar-authority/",
+          },
+        ],
+      },
+      {
+        heading: "What are the Nashik Kumbh Mela 2027 Shahi Snan dates?",
+        paragraphs: [
+          "The three principal Amrit Snan dates are 2 August 2027, 31 August 2027, and 11–12 September 2027. “Shahi Snan” is the traditional term used by devotees; “Amrit Snan” is used in official communications.",
+          "The announced schedule also includes ceremonial and procession milestones. Bathing sequences, Akhara timings, entry rules and security restrictions can change, so check official notices before travel.",
+          "The first Amrit Snan falls on Monday, 2 August 2027, on Ashadh Somvati Amavasya. The second is Tuesday, 31 August 2027, on Shravan Amavasya, also referred to as the Mahakumbh Snan. The third occasion is split across 11 September in Nashik and 12 September in Trimbakeshwar.",
+        ],
+        comparison: {
+          headers: ["Date", "Day", "Event", "Location"],
+          rows: [
+            ["31 October 2026", "Saturday", "Simhastha flag-hoisting, 12:02 PM", "Nashik and Trimbakeshwar"],
+            ["24 July 2027", "Saturday", "Akhara flag-hoisting", "Sadhugram, Nashik"],
+            ["29 July 2027", "Thursday", "Nagar Pradakshina", "Nashik"],
+            ["2 August 2027", "Monday", "First Amrit Snan (Ashadh Somvati Amavasya)", "Nashik and Trimbakeshwar"],
+            ["31 August 2027", "Tuesday", "Second Amrit Snan (Shravan Amavasya)", "Nashik and Trimbakeshwar"],
+            ["11 September 2027", "Saturday", "Third Amrit Snan", "Nashik"],
+            ["12 September 2027", "Sunday", "Third Amrit Snan", "Trimbakeshwar"],
+            ["24 July 2028", "Monday", "Ceremonial flag-lowering", "Nashik–Trimbakeshwar"],
+          ],
+        },
+        bullets: [
+          "Plan to arrive in Nashik at least one or two days before your chosen snan.",
+          "Private vehicles may not be allowed near the main bathing areas.",
+          "Book accommodation and transport well in advance for peak bathing dates.",
+        ],
+      },
+      {
+        heading: "Where is the Nashik–Trimbakeshwar Mahakumbh celebrated?",
+        paragraphs: [
+          "In Nashik, Ramkund on the Godavari is the main centre for bathing and ceremonies. Nearby places include the Godavari Ghats, Panchavati, Kalaram Temple, Sita Gufa, Kapaleshwar Mahadev Temple and Sadhugram. Panchavati is closely associated with the Ramayana and Lord Rama.",
+          "Trimbakeshwar sits near the Brahmagiri range and hosts the Trimbakeshwar Jyotirlinga Temple. Kushavarta Kund, linked with the Godavari, has special significance during Simhastha.",
+        ],
+      },
+      {
+        heading: "How to reach Nashik for Mahakumbh 2026–27",
+        paragraphs: [
+          "Nashik can be reached by train at Nashik Road Railway Station, by air through Nashik Airport at Ozar or Mumbai Airport, and by road from Mumbai, Pune, Shirdi, Surat and other cities. Direct train and flight availability varies by date; check current schedules before booking.",
+        ],
+        steps: [
+          {
+            name: "Choose your arrival route",
+            text: "Compare trains to Nashik Road (NK), flights to Nashik Airport at Ozar (ISK), or flights to Mumbai Airport (BOM) followed by onward travel. Nashik Road is about 10 km from central Nashik.",
+          },
+          {
+            name: "Book and recheck transport",
+            text: "Use IRCTC for rail bookings and monitor Indian Railways announcements, including any special Kumbh trains. Confirm your return journey and hotel pickup before finalising plans.",
+          },
+          {
+            name: "Allow extra time for the road journey",
+            text: "Normally Mumbai is around 4–5 hours by road, Pune around 5–6 hours, and Mumbai Airport is about 165–175 km from Nashik. Journey times can increase considerably during event congestion.",
+          },
+          {
+            name: "Follow official traffic and parking directions",
+            text: "Check advisories, follow official diversions, use designated parking and do not assume private vehicles can enter restricted zones. Arrive before peak bathing dates where possible.",
+          },
+        ],
+        comparison: {
+          headers: ["Starting city", "Approx. distance / arrival"],
+          rows: [
+            ["Mumbai", "165–170 km"],
+            ["Thane", "150–160 km"],
+            ["Pune", "210–220 km"],
+            ["Shirdi", "90–95 km"],
+            ["Chhatrapati Sambhajinagar", "180–190 km"],
+            ["Surat", "230–250 km"],
+            ["Indore", "400–430 km"],
+            ["Ahmedabad", "500–530 km"],
+            ["Nagpur", "650–680 km"],
+          ],
+        },
+        bullets: [
+          "Nashik Road (NK) is the main station on the Central Railway Mumbai–Bhusawal route. Rail journeys may be available from Mumbai, Delhi, Ahmedabad, Surat, Vadodara, Bhopal and Nagpur; check direct or connecting services from Pune and Bengaluru.",
+          "Nashik Airport at Ozar (ISK) is about 20–25 km from central Nashik. Check current routes and schedules; onward options include airport taxis, pre-booked cabs and group transport.",
+          "Mumbai Airport (BOM) is about 165–175 km away and can offer wider domestic and international connectivity. You can continue by road or train; allow considerably more time during the Kumbh.",
+          "From Mumbai, the route is via NH-160. Pune journeys commonly go via Sangamner–Sinnar; Shirdi can be combined with a pilgrimage, and Surat travellers should check live navigation and road conditions.",
+        ],
+        links: [
+          {
+            label: "IRCTC",
+            href: "https://www.irctc.co.in/",
+          },
+          {
+            label: "Indian Railways",
+            href: "https://www.indianrail.gov.in/",
+          },
+        ],
+      },
+      {
+        heading: "How to reach Trimbakeshwar from Nashik",
+        paragraphs: [
+          "Trimbakeshwar is about 28–30 km from Nashik city and 35–40 km from Nashik Road Railway Station. There is no railway station in Trimbakeshwar, so continue by road. The journey normally takes around 45–60 minutes, but allow much longer on bathing dates.",
+        ],
+        steps: [
+          {
+            name: "Select an onward vehicle",
+            text: "Options include a private taxi, local cab, MSRTC bus, shared vehicle, tourist coach or a special shuttle if one is officially announced.",
+          },
+          {
+            name: "Plan the route",
+            text: "A suggested route is Nashik City → Trimbak Road → Trimbakeshwar Town → Trimbakeshwar Jyotirlinga Temple → Kushavarta Kund.",
+          },
+          {
+            name: "Check event-day access",
+            text: "Expect designated parking, shuttles, pedestrian routes and restricted zones. Allow extra time and follow official instructions instead of relying only on navigation apps.",
+          },
+          {
+            name: "Check official notices",
+            text: "Review current transport, traffic and access notices from Maharashtra Tourism and the Nashik District Administration.",
+          },
+        ],
+        comparison: {
+          headers: ["Option", "Best for"],
+          rows: [
+            ["Private taxi", "Families and small groups"],
+            ["Local cabs", "Solo travellers"],
+            ["MSRTC buses", "Budget travellers"],
+            ["Shared vehicles", "Small groups"],
+            ["Tourist coaches", "Large groups"],
+            ["Special shuttle buses", "Kumbh visitors, if announced"],
+          ],
+        },
+        links: [
+          {
+            label: "Maharashtra Tourism",
+            href: "https://maharashtratourism.gov.in/",
+          },
+          {
+            label: "Nashik District Administration",
+            href: "https://nashik.gov.in/",
+          },
+        ],
+      },
+      {
+        heading: "Top places to visit during the Nashik Trimbakeshwar Mahakumbh",
+        paragraphs: [
+          "On major bathing dates, prioritise official Kumbh activities. Some attractions may restrict access, so check local notices and be prepared to adjust your plans.",
+        ],
+        bullets: [
+          "Trimbakeshwar Jyotirlinga Temple: one of the twelve Jyotirlingas of Lord Shiva, known for traditional architecture.",
+          "Kushavarta Kund: the sacred bathing site in Trimbakeshwar, central to Simhastha.",
+          "Ramkund: the key bathing site on the Godavari in Panchavati.",
+          "Panchavati: a Ramayana-linked area with temples, heritage lanes and religious markets.",
+          "Sita Gufa: a small cave shrine in Panchavati.",
+          "Kalaram Temple: a prominent Rama temple famed for its black stone idol.",
+          "Brahmagiri Hills: linked to the origin of the Godavari; trekking depends on weather and access.",
+          "Anjaneri Hills: a scenic trek traditionally associated with Lord Hanuman’s birthplace.",
+          "Pandavleni Caves: ancient Buddhist rock-cut caves near Nashik.",
+          "Sula Vineyards: a well-known winery; check entry policies and timings.",
+        ],
+      },
+      {
+        heading: "Local transport and guides during Mahakumbh",
+        paragraphs: [
+          "Expect local and MSRTC buses, private taxis, shared cabs, tourist coaches, designated walking routes and special shuttles if notified. Identify your parking location and official pickup and drop-off points before travelling. Carry water and essential medicines, avoid relying on last-minute taxis, set a family meeting point and allow extra time between Nashik and Trimbakeshwar.",
+          "Visitors can check Maharashtra Tourism and Kumbh Mela Authority announcements for trained or authorised guides, or research established tour operators. A guide may explain Ramkund, Panchavati, Trimbakeshwar and Kushavarta Kund, lead heritage walks, help build itineraries and coordinate transport. Ask for ID and credentials, confirm experience, check reviews, agree charges and inclusions in advance, and avoid large advances to unverified people. Private operators are not automatically government-authorised Kumbh guides.",
+        ],
+        links: [
+          {
+            label: "Contact ClickAi Solutions",
+            href: "https://clickaisolutions.in/contact/",
+          },
+          {
+            label: "services",
+            href: "https://clickaisolutions.in/services/",
+          },
+          {
+            label: "Maharashtra Tourism",
+            href: "https://maharashtratourism.gov.in/",
+          },
+        ],
+      },
+      {
+        heading: "Where to stay during Nashik Mahakumbh 2026–27",
+        paragraphs: [
+          "Popular areas include Panchavati, close to Ramkund; Nashik Road, convenient for train arrivals; College Road and Gangapur Road, with hotels, restaurants and city facilities; Mumbai Naka / CBS, for road and bus connections; and Trimbakeshwar, for Jyotirlinga darshan and Kushavarta Kund.",
+          "Accommodation may include budget and premium hotels, guesthouses, dharamshalas, religious accommodation, homestays, group stays and temporary Kumbh camps. For August and September 2027, book early, check cancellation policies, confirm distance to your bathing location and ask whether the property will remain accessible during traffic restrictions. Verify a property before paying, and book temporary camps or government-designated stays only through verified official channels.",
+        ],
+        comparison: {
+          headers: ["Area", "Best for"],
+          rows: [
+            ["Panchavati", "Walking distance to Ramkund and Kalaram Temple"],
+            ["Nashik Road", "Railway arrivals"],
+            ["College Road / Gangapur Road", "Hotels, restaurants and city facilities"],
+            ["Mumbai Naka / CBS", "Road and bus connections"],
+            ["Trimbakeshwar", "Jyotirlinga darshan and Kushavarta Kund"],
+          ],
+        },
+        links: [
+          {
+            label: "Nashik–Trimbakeshwar Simhastha Kumbh Mela",
+            href: "https://divcomnashik.maharashtra.gov.in/en/simhastha-kumbh-mela-2027/",
+          },
+        ],
+      },
+      {
+        heading: "Suggested two-day Nashik–Trimbakeshwar itinerary",
+        paragraphs: [
+          "This outline is for normal travel conditions, not a promise of access on a principal bathing date. Crowds, diversions and security restrictions may make it impractical; follow event-specific arrangements.",
+        ],
+        steps: [
+          {
+            name: "Day 1 morning: Panchavati",
+            text: "Arrive and check in, then visit Panchavati, Kalaram Temple and Sita Gufa.",
+          },
+          {
+            name: "Day 1 afternoon: Nashik ghats",
+            text: "Visit Ramkund, the Godavari Ghats and Kapaleshwar Temple.",
+          },
+          {
+            name: "Day 1 evening: local markets",
+            text: "Explore local markets and the Godavari atmosphere.",
+          },
+          {
+            name: "Day 2 morning: Trimbakeshwar",
+            text: "Travel early to Trimbakeshwar for Jyotirlinga darshan, subject to current arrangements, and visit Kushavarta Kund.",
+          },
+          {
+            name: "Day 2 afternoon: Brahmagiri area",
+            text: "Visit the Brahmagiri area only if access is open, then have lunch locally.",
+          },
+          {
+            name: "Day 2 evening: return",
+            text: "Return to Nashik and continue your journey.",
+          },
+        ],
+      },
+      {
+        heading: "What to eat in Nashik during the Kumbh",
+        paragraphs: [
+          "Try Misal Pav, Vada Pav, Sabudana Khichdi, Poha, Puran Poli, Thalipeeth, a Maharashtrian thali and traditional vegetarian meals. Community kitchens and temporary food facilities may operate during the Kumbh; check their locations before bathing days.",
+        ],
+        links: [
+          {
+            label: "Nashik blog",
+            href: "https://clickaisolutions.in/blog/",
+          },
+        ],
+      },
+      {
+        heading: "Essential travel tips for Nashik Mahakumbh 2026–27",
+        paragraphs: [
+          "For August–September, expect monsoon rain, slippery surfaces, congestion, road-access changes and delays. Carry rain protection, check weather and official advisories, and keep children and older travellers close in busy areas.",
+        ],
+        bullets: [
+          "Before travelling, confirm train or flight tickets, reserve accommodation, re-check the Amrit Snan schedule and transport announcements, carry ID and payment options, save emergency numbers, and share your itinerary with family.",
+          "During your visit, follow police instructions and use designated bathing areas only. Avoid overcrowded or restricted spots, carry a power bank, water and comfortable footwear, use authorised accommodation and transport, secure belongings and do not share unverified information.",
+          "Senior citizens should avoid peak crowd movement where possible, plan accessible transport, carry medicines, note medical assistance points and follow medical and security staff.",
+          "Arrive in Nashik one or two days before a chosen snan where possible. Private vehicles may be restricted near bathing areas; follow designated parking, shuttles and pedestrian routes.",
+        ],
+      },
+      {
+        heading: "Official sources for Nashik Kumbh Mela visitors",
+        paragraphs: [
+          "The Nashik–Trimbakeshwar Kumbh Mela Authority was set up by the Government of Maharashtra to plan and oversee Simhastha 2027. Its remit covers infrastructure, transport and traffic, security, sanitation, pilgrim facilities, public information and coordination between departments. Use official resources for current event, travel and visitor information.",
+        ],
+        links: [
+          {
+            label: "Nashik–Trimbakeshwar Kumbh Mela Authority",
+            href: "https://divcomnashik.maharashtra.gov.in/en/about-nashik-trimbakeshwar-authority/",
+          },
+          {
+            label: "Nashik–Trimbakeshwar Simhastha Kumbh Mela",
+            href: "https://divcomnashik.maharashtra.gov.in/en/simhastha-kumbh-mela-2027/",
+          },
+          {
+            label: "Nashik–Trimbakeshwar Kumbh Mela Authority",
+            href: "https://divcomnashik.maharashtra.gov.in/en/about-nashik-trimbakeshwar-authority/",
+          },
+          {
+            label: "Nashik District Administration",
+            href: "https://nashik.gov.in/",
+          },
+          {
+            label: "Maharashtra Tourism",
+            href: "https://maharashtratourism.gov.in/",
+          },
+          {
+            label: "Indian Railways",
+            href: "https://www.indianrail.gov.in/",
+          },
+          {
+            label: "IRCTC",
+            href: "https://www.irctc.co.in/",
+          },
+          {
+            label: "Ministry of Tourism",
+            href: "https://tourism.gov.in/",
+          },
+        ],
+      },
+      {
+        heading: "Frequently asked questions about Nashik Trimbakeshwar Mahakumbh 2026–27",
+        paragraphs: [],
+        faqs: [
+          {
+            question: "When does the Nashik Mahakumbh 2026–27 start?",
+            answer:
+              "It is scheduled to begin on 31 October 2026 with ceremonial flag-hoisting at Ramkund in Nashik and Kushavarta Kund in Trimbakeshwar. Confirm event arrangements with official notices.",
+          },
+          {
+            question: "What are the Nashik Mahakumbh 2027 Shahi Snan dates?",
+            answer:
+              "The principal dates are 2 August 2027, 31 August 2027, and 11 September 2027 in Nashik / 12 September 2027 in Trimbakeshwar.",
+          },
+          {
+            question: "Where is the Nashik Kumbh Mela celebrated?",
+            answer:
+              "At Ramkund in Panchavati, Nashik, and Kushavarta Kund in Trimbakeshwar.",
+          },
+          {
+            question: "How long does the Nashik Mahakumbh last?",
+            answer:
+              "The announced period runs from 31 October 2026 to the ceremonial flag-lowering on 24 July 2028.",
+          },
+          {
+            question: "How can I reach the Nashik Mahakumbh by train?",
+            answer:
+              "Travel to Nashik Road Railway Station, then continue to Ramkund or Trimbakeshwar by local or official event transport. Book via IRCTC.",
+          },
+          {
+            question: "Which is the nearest airport to Nashik?",
+            answer:
+              "Nashik Airport at Ozar (ISK) is the nearest. Mumbai Airport (BOM) offers wider domestic and international connectivity.",
+          },
+          {
+            question: "How far is Trimbakeshwar from Nashik?",
+            answer:
+              "It is about 28–30 km from Nashik city and 35–40 km from Nashik Road Railway Station.",
+          },
+          {
+            question: "Can I visit Nashik and Trimbakeshwar in one day?",
+            answer:
+              "Yes, under normal conditions. On principal bathing dates, crowds and restrictions may require much more time.",
+          },
+          {
+            question: "Where should I stay during the Nashik Kumbh Mela?",
+            answer:
+              "Consider Panchavati, Nashik Road, College Road, Gangapur Road, Mumbai Naka or Trimbakeshwar, depending on your itinerary and current access arrangements.",
+          },
+          {
+            question: "Is there a railway station in Trimbakeshwar?",
+            answer:
+              "No. Use Nashik Road Railway Station and continue by road.",
+          },
+          {
+            question: "Will special trains and buses operate?",
+            answer:
+              "Indian Railways and transport authorities may add services. Check official announcements for schedules and fares.",
+          },
+          {
+            question: "Can tourists hire local guides in Nashik?",
+            answer:
+              "Yes. Check Maharashtra Tourism and Kumbh Mela Authority announcements for authorised guides.",
+          },
+          {
+            question: "What should I carry to the Nashik Mahakumbh?",
+            answer:
+              "Carry ID, comfortable footwear, drinking water, essential medicines, rain protection, a power bank and emergency contacts.",
+          },
+          {
+            question: "Is the Nashik Kumbh Mela suitable for international visitors?",
+            answer:
+              "Yes. Plan via Mumbai or Nashik Airport, arrange travel documents, accommodation and transport in advance, and follow official instructions. Check the Ministry of Tourism for visitor information.",
+          },
+          {
+            question: "What is the difference between Nashik Kumbh and Trimbakeshwar Kumbh?",
+            answer:
+              "Both are parts of one Simhastha Kumbh Mela. Nashik’s main bathing site is Ramkund, and Trimbakeshwar’s is Kushavarta Kund, each with its own traditions and arrangements.",
+          },
+        ],
+        links: [
+          {
+            label: "IRCTC",
+            href: "https://www.irctc.co.in/",
+          },
+          {
+            label: "Indian Railways",
+            href: "https://www.indianrail.gov.in/",
+          },
+          {
+            label: "Maharashtra Tourism",
+            href: "https://maharashtratourism.gov.in/",
+          },
+          {
+            label: "Ministry of Tourism",
+            href: "https://tourism.gov.in/",
+          },
+        ],
+      },
+      {
+        heading: "Plan your Nashik–Trimbakeshwar journey early",
+        paragraphs: [
+          "The Nashik–Trimbakeshwar Simhastha Mahakumbh 2026–27 is a major spiritual occasion, from bathing ceremonies at Ramkund and Kushavarta Kund to the Trimbakeshwar Jyotirlinga and Panchavati’s heritage. Book accommodation early, check train and flight options, note the Amrit Snan schedule and follow official traffic and safety instructions.",
+          "This independent guide will be reviewed as official announcements change. ClickAi Solutions is a Nashik-based digital marketing agency sharing practical, locally informed travel information for pilgrims and visitors.",
+        ],
+        links: [
+          {
+            label: "ClickAi Solutions",
+            href: "https://clickaisolutions.in/",
+          },
+        ],
+      },
+    ],
+  },
   {
     slug: "structured-data-for-aeo",
     category: "AI Search & SEO",

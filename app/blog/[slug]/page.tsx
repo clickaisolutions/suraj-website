@@ -21,6 +21,8 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
     return { title: "Article not found" };
   }
 
+  const articlePath = article.path ?? `/blog/${article.slug}`;
+
   return {
     title: article.metaTitle
       ? { absolute: article.metaTitle }
@@ -28,13 +30,13 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
     description: article.metaDescription ?? article.excerpt,
     keywords: article.keywords,
     alternates: {
-      canonical: `${siteUrl}/blog/${article.slug}`,
+      canonical: `${siteUrl}${articlePath}`,
     },
     openGraph: {
       title: article.metaTitle ?? article.title,
       description: article.metaDescription ?? article.excerpt,
       type: "article",
-      url: `${siteUrl}/blog/${article.slug}`,
+      url: `${siteUrl}${articlePath}`,
       publishedTime: article.dateValue,
       images: [
         { url: article.socialImage ?? article.image, alt: article.imageAlt },
@@ -81,7 +83,8 @@ async function BlogArticleContent({
   }
 
   const relatedArticles = blogArticles.filter((item) => item.slug !== article.slug);
-  const articleUrl = `${siteUrl}/blog/${article.slug}`;
+  const articlePath = article.path ?? `/blog/${article.slug}`;
+  const articleUrl = `${siteUrl}${articlePath}`;
   const howToSteps = article.sections.flatMap((section) =>
     section.steps?.length
       ? section.steps.map(({ name, text }) => ({ name, text }))
@@ -116,7 +119,7 @@ async function BlogArticleContent({
           .join("\n\n"),
         author: article.author
           ? {
-              "@type": "Person",
+              "@type": article.authorType ?? "Person",
               name: article.author,
             }
           : {
@@ -139,6 +142,27 @@ async function BlogArticleContent({
           { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
         ],
       },
+      ...(article.path
+        ? [
+            {
+              "@type": "LocalBusiness",
+              "@id": `${siteUrl}/#localbusiness`,
+              name: "ClickAi Solutions",
+              url: siteUrl,
+              email: "clickaisolutions@gmail.com",
+              telephone: "+91 8055035039",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Nashik",
+                addressRegion: "Maharashtra",
+                addressCountry: "IN",
+              },
+              parentOrganization: {
+                "@id": `${siteUrl}/#organization`,
+              },
+            },
+          ]
+        : []),
       ...(howToSteps.length
         ? [
             {
@@ -215,6 +239,18 @@ async function BlogArticleContent({
             src={article.image}
           />
         </div>
+        {article.imageCredit && (
+          <p className="blog-image-credit">
+            Photo:{" "}
+            <a
+              href={article.imageCredit.href}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {article.imageCredit.label}
+            </a>
+          </p>
+        )}
 
         <div className="blog-article-layout">
           <aside aria-label="Article overview" className="blog-article-aside">
@@ -346,7 +382,7 @@ async function BlogArticleContent({
               <Link
                 aria-label={`Read ${relatedArticle.title}`}
                 className="blog-card-image"
-                href={`/blog/${relatedArticle.slug}`}
+                href={relatedArticle.path ?? `/blog/${relatedArticle.slug}`}
               >
                 <BlogImage
                   alt={relatedArticle.imageAlt}
@@ -361,12 +397,18 @@ async function BlogArticleContent({
                 <span>{relatedArticle.readTime}</span>
               </div>
               <h3>
-                <Link className="blog-title-link" href={`/blog/${relatedArticle.slug}`}>
+                <Link
+                  className="blog-title-link"
+                  href={relatedArticle.path ?? `/blog/${relatedArticle.slug}`}
+                >
                   {relatedArticle.title}
                 </Link>
               </h3>
               <p>{relatedArticle.excerpt}</p>
-              <Link className="blog-read-link" href={`/blog/${relatedArticle.slug}`}>
+              <Link
+                className="blog-read-link"
+                href={relatedArticle.path ?? `/blog/${relatedArticle.slug}`}
+              >
                 Read the article <span aria-hidden="true">↗</span>
               </Link>
             </article>

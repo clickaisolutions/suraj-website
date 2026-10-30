@@ -34,7 +34,7 @@ export default function BlogIndexPage() {
         <Link
           aria-label={`Read ${featuredArticle.title}`}
           className="blog-featured-image"
-          href={`/blog/${featuredArticle.slug}`}
+          href={featuredArticle.path ?? `/blog/${featuredArticle.slug}`}
         >
           <BlogImage
             alt={featuredArticle.imageAlt}
@@ -54,7 +54,10 @@ export default function BlogIndexPage() {
           </div>
           <h2 id="featured-article-title">{featuredArticle.title}</h2>
           <p>{featuredArticle.excerpt}</p>
-          <Link className="blog-read-link" href={`/blog/${featuredArticle.slug}`}>
+          <Link
+            className="blog-read-link"
+            href={featuredArticle.path ?? `/blog/${featuredArticle.slug}`}
+          >
             Read the article <span aria-hidden="true">↗</span>
           </Link>
         </div>
@@ -72,7 +75,7 @@ export default function BlogIndexPage() {
               <Link
                 aria-label={`Read ${article.title}`}
                 className="blog-card-image"
-                href={`/blog/${article.slug}`}
+                href={article.path ?? `/blog/${article.slug}`}
               >
                 <BlogImage
                   alt={article.imageAlt}
@@ -89,12 +92,18 @@ export default function BlogIndexPage() {
                 <span>{article.readTime}</span>
               </div>
               <h3>
-                <Link className="blog-title-link" href={`/blog/${article.slug}`}>
+                <Link
+                  className="blog-title-link"
+                  href={article.path ?? `/blog/${article.slug}`}
+                >
                   {article.title}
                 </Link>
               </h3>
               <p>{article.excerpt}</p>
-              <Link className="blog-read-link" href={`/blog/${article.slug}`}>
+              <Link
+                className="blog-read-link"
+                href={article.path ?? `/blog/${article.slug}`}
+              >
                 Read the article <span aria-hidden="true">↗</span>
               </Link>
             </article>

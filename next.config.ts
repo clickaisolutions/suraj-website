@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         destination: "/blog/sitecore-vs-umbraco-enterprise-security-scalability",
         permanent: true,
       },
+      {
+        source: "/blog/nashik-trimbakeshwar-mahakumbh-2026-27-guide",
+        destination: "/nashik-trimbakeshwar-mahakumbh-2026-27-guide",
+        permanent: true,
+      },
     ];
   },
   experimental: {

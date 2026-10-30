@@ -1478,6 +1478,20 @@ img {
   border-radius: 8px;
 }
 
+.blog-image-credit {
+  width: min(100%, 1060px);
+  margin: 10px auto 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+}
+
+.blog-image-credit a {
+  color: var(--blue-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .blog-article-layout {
   display: grid;
   grid-template-columns: 250px minmax(0, 1fr);
