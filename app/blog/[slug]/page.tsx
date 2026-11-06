@@ -2,12 +2,46 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { blogArticles } from "../blog-data";
 import { BlogImage } from "../blog-image";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://clickaisolutions.in";
 
 type BlogArticlePageProps = PageProps<"/blog/[slug]">;
+
+function renderArticleText(text: string, richText = false): ReactNode {
+  if (!richText) {
+    return text;
+  }
+
+  return text
+    .split(/(\*\*.+?\*\*|\[[^\]]+\]\([^)]+\))/g)
+    .map((part, index) => {
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return <strong key={`${index}-${part}`}>{part.slice(2, -2)}</strong>;
+      }
+
+      const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (linkMatch) {
+        const [, label, href] = linkMatch;
+        const isExternal = /^https?:\/\//.test(href);
+
+        return (
+          <a
+            href={href}
+            key={`${index}-${part}`}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+            target={isExternal ? "_blank" : undefined}
+          >
+            {label}
+          </a>
+        );
+      }
+
+      return part;
+    });
+}
 
 export function generateStaticParams() {
   return blogArticles.map(({ slug }) => ({ slug }));
@@ -109,6 +143,7 @@ async function BlogArticleContent({
             section.heading,
             ...section.paragraphs,
             ...(section.bullets ?? []),
+            ...(section.closingParagraphs ?? []),
             ...(section.steps?.flatMap(({ name, text }) => [name, text]) ?? []),
             ...(section.comparison?.rows.map((row) => row.join(": ")) ?? []),
             ...(section.faqs?.flatMap(({ question, answer }) => [question, answer]) ?? []),
@@ -268,7 +303,9 @@ async function BlogArticleContent({
               <h2>Key takeaways</h2>
               <ul>
                 {article.takeaways.map((takeaway) => (
-                  <li key={takeaway}>{takeaway}</li>
+                  <li key={takeaway}>
+                    {renderArticleText(takeaway, article.richText)}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -278,10 +315,10 @@ async function BlogArticleContent({
             {article.quickAnswer && (
               <aside className="blog-quick-answer" aria-label="Quick answer">
                 <h2>Quick Answer</h2>
-                <p>{article.quickAnswer}</p>
+                <p>{renderArticleText(article.quickAnswer, article.richText)}</p>
               </aside>
             )}
-            <p>{article.intro}</p>
+            <p>{renderArticleText(article.intro, article.richText)}</p>
             {article.slug === "sitecore-vs-umbraco-enterprise-security-scalability" && (
               <p className="blog-platform-links">
                 Official platform websites:{" "}
@@ -299,21 +336,32 @@ async function BlogArticleContent({
               <section id={`section-${index + 1}`} key={section.heading}>
                 <h2>{section.heading}</h2>
                 {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph}>
+                    {renderArticleText(paragraph, article.richText)}
+                  </p>
                 ))}
                 {section.bullets && (
                   <ul>
                     {section.bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
+                      <li key={bullet}>
+                        {renderArticleText(bullet, article.richText)}
+                      </li>
                     ))}
                   </ul>
                 )}
+                {section.closingParagraphs?.map((paragraph) => (
+                  <p key={paragraph}>
+                    {renderArticleText(paragraph, article.richText)}
+                  </p>
+                ))}
                 {section.steps && (
                   <ol>
                     {section.steps.map((step) => (
                       <li key={step.name}>
-                        <strong>{step.name}</strong>
-                        <p>{step.text}</p>
+                        <strong>
+                          {renderArticleText(step.name, article.richText)}
+                        </strong>
+                        <p>{renderArticleText(step.text, article.richText)}</p>
                       </li>
                     ))}
                   </ol>
@@ -342,8 +390,10 @@ async function BlogArticleContent({
                 )}
                 {section.faqs?.map((faq) => (
                   <div className="blog-faq" key={faq.question}>
-                    <h3>{faq.question}</h3>
-                    <p>{faq.answer}</p>
+                    <h3>
+                      {renderArticleText(faq.question, article.richText)}
+                    </h3>
+                    <p>{renderArticleText(faq.answer, article.richText)}</p>
                   </div>
                 ))}
                 {section.links && (
@@ -364,12 +414,14 @@ async function BlogArticleContent({
               </section>
             ))}
 
-            <div className="blog-article-cta">
-              <p>Want to put these ideas to work for your business?</p>
-              <Link className="button button-primary" href="/contact">
-                Talk with our team <span aria-hidden="true">↗</span>
-              </Link>
-            </div>
+            {!article.hasCustomCallToAction && (
+              <div className="blog-article-cta">
+                <p>Want to put these ideas to work for your business?</p>
+                <Link className="button button-primary" href="/contact">
+                  Talk with our team <span aria-hidden="true">↗</span>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </article>

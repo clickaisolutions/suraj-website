@@ -1,6 +1,7 @@
 export type BlogSection = {
   heading: string;
   paragraphs: string[];
+  closingParagraphs?: string[];
   bullets?: string[];
   links?: { label: string; href: string }[];
   steps?: BlogHowToStep[];
@@ -42,6 +43,8 @@ export type BlogArticle = {
   imageCredit?: { label: string; href: string };
   author?: string;
   authorType?: "Person" | "Organization";
+  richText?: boolean;
+  hasCustomCallToAction?: boolean;
   takeaways: string[];
   sections: BlogSection[];
 };
@@ -1632,6 +1635,314 @@ export const blogArticles: BlogArticle[] = [
         paragraphs: [
           "ZoodleApp's case reinforced a practical lesson: resolve discovery and rendering barriers before expecting content optimization to carry the whole SEO effort. Crawlability, page-specific metadata, strong internal links, accurate structured data, and ongoing measurement work together.",
           "For any Angular or JavaScript-heavy website, start by checking what crawlers can actually reach and render. Fix the technical foundations, automate only repeatable patterns, and use verified data—not assumptions—to describe the results.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "local-seo-growth-plan-small-businesses-new-york",
+    path: "/local-seo-growth-plan-small-businesses-new-york",
+    category: "Local SEO",
+    title:
+      "Local SEO Growth Plan for Small Businesses in New York: From Search Visibility to Qualified Leads",
+    metaTitle: "Local SEO Services New York: Growth Plan for Small Business",
+    metaDescription:
+      "Get a proven local SEO growth plan for New York small businesses. Optimize Google Business Profile, rank in the map pack and turn searches into leads.",
+    keywords: [
+      "local SEO services New York",
+      "local SEO for small businesses",
+      "Google Business Profile optimization New York",
+      "New York local SEO growth plan",
+      "Google Map Pack rankings",
+    ],
+    excerpt:
+      "A practical, six-pillar local SEO framework to help New York small businesses improve search visibility and turn nearby searches into qualified leads.",
+    quickAnswer:
+      "The most effective local SEO plan combines six parts: a fully optimized Google Business Profile, consistent business citations (name, address, phone), neighborhood-specific landing pages, a steady flow of genuine customer reviews, locally relevant content with structured data, and conversion-focused pages that turn visitors into calls, bookings and form fills. Done consistently, this approach moves a New York business from being invisible to appearing in the Google Map Pack, organic results and AI-generated answers, and it produces qualified leads rather than just traffic.",
+    intro:
+      "This guide shares a practical framework for small and mid-sized businesses that want predictable growth from search, whether you manage local SEO yourself or work with a partner.",
+    date: "November 7, 2026",
+    dateValue: "2026-11-07",
+    readTime: "10 min read",
+    image: "/local-seo-growth-plan-new-york-desktop.svg",
+    mobileImage: "/local-seo-growth-plan-new-york-mobile.svg",
+    socialImage: "/local-seo-growth-plan-new-york-social.png",
+    imageAlt:
+      "Local SEO growth plan for New York small businesses, featuring a city map, location pin and rising search visibility chart",
+    author: "ClickAi Solutions",
+    authorType: "Organization",
+    richText: true,
+    hasCustomCallToAction: true,
+    takeaways: [
+      "New York is one of the most competitive local search markets, so hyperlocal targeting works better than generic SEO.",
+      "Google Business Profile is a major lever for local visibility, especially for near-me and map-based searches.",
+      "Track calls, direction requests and form submissions—not just rankings—to measure qualified leads.",
+      "AI search tools favor clear, consistent and verifiable business information across the web.",
+      "A 90-day roadmap offers a realistic, measurable path from setup to qualified leads.",
+    ],
+    sections: [
+      {
+        heading: "Why Local SEO Matters for New York Small Businesses",
+        paragraphs: [
+          "If you run a restaurant in Brooklyn, a law firm in Manhattan, a dental clinic in Queens, a home services company in the Bronx or a boutique on Staten Island, your customers are searching on their phones—often minutes before making a decision. They type queries like “plumber near me,” “best Italian restaurant in Williamsburg,” or “accountant in Midtown.”",
+          "Those searches have strong local intent. Google responds with a map, a short list of businesses (the Local Pack) and organic results. If your business is not in that short list, you are effectively invisible to people who are ready to buy.",
+          "**Local SEO** improves your online presence so your business appears for location-based searches. For small businesses in New York, it offers something paid ads cannot: compounding, long-term **organic lead generation in New York** without paying for every click.",
+          "At [ClickAi Solutions](https://www.clickaisolutions.com/), we work with small and mid-sized businesses that want predictable growth from search. This guide shares the framework we use, so you can understand the process whether you do it yourself or work with a partner.",
+        ],
+      },
+      {
+        heading: "What Makes Local SEO in New York Different?",
+        paragraphs: [
+          "New York is not like most U.S. markets. Several factors make **SEO for small businesses in New York** uniquely challenging—and uniquely rewarding:",
+          "Because of this, a copy-paste strategy from another city will underperform. Your plan must reflect how New Yorkers actually search.",
+        ],
+        bullets: [
+          "**Extreme competition.** Dozens of competitors may exist within a few blocks. Standing out requires precision.",
+          "**Hyperlocal behavior.** People search by neighborhood, such as SoHo, Astoria, Harlem, Park Slope and Flushing, rather than just “New York.”",
+          "**Mobile and transit-driven searching.** Many searches happen on the go, which increases the importance of Google Maps and Business Profile signals.",
+          "**Multilingual audiences.** Spanish, Chinese, Russian, Bengali and many other languages are widely used, creating opportunities for multilingual content and reviews.",
+          "**High customer value.** A single qualified lead in industries like legal, medical, real estate or home services can be worth hundreds or thousands of dollars.",
+        ],
+      },
+      {
+        heading: "The 6-Pillar Local SEO Growth Plan for New York",
+        paragraphs: [
+          "Build local visibility on a strong foundation, then connect it to conversion-focused pages and lead tracking. These six pillars work together as a practical growth plan.",
+        ],
+      },
+      {
+        heading: "Pillar 1: Google Business Profile Optimization in New York",
+        paragraphs: [
+          "Your Google Business Profile (GBP) is often a customer’s first impression of your company. For many local searches, it is more visible than your website. Strong **Google Business Profile optimization in New York** includes:",
+        ],
+        bullets: [
+          "**Claim and verify** your profile through [Google Business Profile](https://www.google.com/business/) so you control the information.",
+          "**Choose the right primary category.** It is an influential ranking signal. Add secondary categories only when they genuinely apply.",
+          "**Use your real business name.** Do not stuff keywords into the name; it violates [Google Business Profile guidelines](https://support.google.com/business/answer/3038177) and risks suspension.",
+          "**Complete every section:** address or service area, hours (including holiday hours), phone, website, appointment links, attributes, and a keyword-aware but natural business description.",
+          "**List all services and products** with clear descriptions and, where possible, prices.",
+          "**Upload original photos and videos** regularly, including your storefront, team, interior and completed work.",
+          "**Post updates** such as offers, events and news to show activity.",
+          "**Turn on messaging and Q&A management** so you can respond quickly to inquiries.",
+        ],
+        closingParagraphs: [
+          "**Pro tip:** Add your neighborhood and borough naturally in your description, for example, “serving clients across Lower Manhattan, Brooklyn Heights and Jersey City.” This helps Google and AI systems understand where you operate.",
+        ],
+      },
+      {
+        heading: "Pillar 2: Local Search Optimization for Your Website",
+        paragraphs: [
+          "Your website supports your profile and gives Google more evidence that you are relevant to a location. Core elements of **local search optimization in New York** include:",
+        ],
+        bullets: [
+          "**Location and service pages.** Create a dedicated page for each core service and each neighborhood or borough you serve, such as “Dental Implants in Astoria, Queens.” Each page needs unique content, not duplicated text with the location swapped.",
+          "**On-page basics.** Include the service and location in the title tag, H1, first paragraph, URL, image alt text and internal links.",
+          "**NAP consistency.** Keep your business Name, Address and Phone number identical across your site, profile and every directory.",
+          "**Embedded Google Map** and clear directions, including nearby subway lines, landmarks and parking information—useful details for New Yorkers.",
+          "**Mobile-first design and speed.** Test pages with [Google PageSpeed Insights](https://pagespeed.web.dev/). Slow, cluttered mobile pages lose leads.",
+          "**Clear calls to action** such as click-to-call buttons, short forms, online booking and live chat.",
+        ],
+        closingParagraphs: [
+          "Follow [Google Search Central’s local business documentation](https://developers.google.com/search/docs/appearance/structured-data/local-business) when adding structured data to your pages.",
+        ],
+      },
+      {
+        heading: "Pillar 3: Citations and Local Authority",
+        paragraphs: [
+          "Citations are mentions of your business name, address and phone number on other websites. Consistent citations reinforce trust.",
+        ],
+        bullets: [
+          "Submit your business to major platforms such as Apple Business Connect, Bing Places, Yelp, Facebook and Better Business Bureau.",
+          "Add industry-specific directories for legal, medical, home services, restaurants and other sectors.",
+          "Join local organizations. Business improvement districts, chambers of commerce and community groups often provide valuable, relevant links. The [NYC Department of Small Business Services](https://www.nyc.gov/site/sbs/index.page) is a resource for local business support and networking.",
+          "Earn press and community mentions through sponsorships, events and partnerships with New York blogs or neighborhood publications.",
+        ],
+        closingParagraphs: [
+          "Quality beats quantity. A handful of accurate, relevant listings beats hundreds of low-quality ones.",
+        ],
+      },
+      {
+        heading: "Pillar 4: Reviews and Reputation Management",
+        paragraphs: [
+          "Reviews influence both rankings and conversions. Many customers will not call a business with weak or no recent reviews.",
+        ],
+        bullets: [
+          "**Ask every happy customer** for a review, using a direct Google review link by text or email.",
+          "**Make it easy.** A QR code at your counter or on receipts can help customers leave a review.",
+          "**Respond to every review**, positive or negative, professionally and promptly. Mention the service or neighborhood naturally when it makes sense.",
+          "**Never buy or fake reviews.** It violates platform policies and damages trust.",
+        ],
+        closingParagraphs: [
+          "Research such as the [BrightLocal Local Consumer Review Survey](https://www.brightlocal.com/research/local-consumer-review-survey/) shows how heavily consumers rely on reviews when choosing a local business.",
+        ],
+      },
+      {
+        heading: "Pillar 5: Content That Answers Real Local Questions",
+        paragraphs: [
+          "Content builds topical authority and captures searchers earlier in their decision journey. Examples of high-value local content include:",
+        ],
+        bullets: [
+          "“How much does [your service] cost in New York?”",
+          "“How to choose a [your profession] in Brooklyn”",
+          "“Checklist: What to know before hiring a [service] in NYC”",
+          "Case studies featuring real local clients and measurable results",
+          "Neighborhood guides tied to your services",
+          "Write in a clear, helpful, first-hand tone that demonstrates real experience. Google’s [helpful content guidance](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) emphasizes experience, expertise, authoritativeness and trustworthiness (E-E-A-T).",
+        ],
+        closingParagraphs: [
+          "For more strategies, read our related guides: [Google Business Profile Checklist for NYC Businesses](https://www.clickaisolutions.com/blog/google-business-profile-checklist), [How to Get More Google Reviews](https://www.clickaisolutions.com/blog/get-more-google-reviews), and [Local SEO Pricing Guide](https://www.clickaisolutions.com/blog/local-seo-cost).",
+        ],
+      },
+      {
+        heading: "Pillar 6: Conversion Tracking and Lead Quality",
+        paragraphs: [
+          "Visibility is only the start. The goal is **qualified leads**. To get there:",
+        ],
+        bullets: [
+          "Set up **Google Analytics 4** and **Google Search Console** to measure organic performance.",
+          "Track **phone calls, form submissions, booking clicks and direction requests** as conversion events.",
+          "Use call tracking with dynamic numbers while keeping your primary number consistent in your profile.",
+          "Review which pages and queries produce leads, and put more effort there.",
+          "Qualify leads with smart forms: ask for service type, location and timeline.",
+          "Follow up fast. Responding within minutes often decides who wins the job.",
+        ],
+      },
+      {
+        heading: "Optimizing for AI Search (AEO and GEO)",
+        paragraphs: [
+          "Search is changing. People now get answers directly from Google AI Overviews, voice assistants, and generative tools like ChatGPT and Perplexity. This is where **Answer Engine Optimization (AEO)** and **Generative Engine Optimization (GEO)** come in.",
+          "**AEO** structures content so search engines can extract direct, concise answers for featured snippets, voice answers and People Also Ask. **GEO** makes your business a trusted source that AI models can cite or recommend in generated answers.",
+        ],
+      },
+      {
+        heading: "How to Make Your Business AI-Ready",
+        paragraphs: [],
+        bullets: [
+          "**Lead with direct answers.** Place a 40–60 word answer right under each question-style heading.",
+          "**Use clear entity information.** State your business name, services, address, service areas and contact details consistently across your site and the web.",
+          "**Add structured data.** Use LocalBusiness, Service, FAQPage and Review schema markup, following [Schema.org’s LocalBusiness specification](https://schema.org/LocalBusiness).",
+          "**Build an FAQ section** on key pages that mirrors real customer questions.",
+          "**Publish original, citable information.** Pricing ranges, process steps, local insights and case study data give AI systems something unique to reference.",
+          "**Earn mentions across trusted sources.** AI models weigh consistent, corroborated information from reputable places.",
+          "**Keep information fresh.** Update hours, services and content regularly.",
+          "**Write conversationally.** Use natural phrasing that matches how people speak into their phones, such as “Who is the best local SEO company near me in New York?”",
+        ],
+        closingParagraphs: [
+          "Businesses that combine strong traditional local SEO with AEO and GEO practices are better positioned to appear wherever customers search—on the map, in organic results or in an AI-generated answer.",
+        ],
+      },
+      {
+        heading: "Your 90-Day Local SEO Roadmap for a New York Small Business",
+        paragraphs: [
+          "Local SEO is a long-term investment. Many businesses see early movement in map visibility within 30 to 90 days, with stronger lead growth building over the following months. Timelines vary by industry, competition and starting point.",
+        ],
+        comparison: {
+          headers: ["Timeframe", "Focus", "Key actions"],
+          rows: [
+            [
+              "Days 1 to 30",
+              "Foundation",
+              "Audit your site and profile, claim and optimize Google Business Profile, fix NAP inconsistencies, set up analytics and conversion tracking, and build core service pages.",
+            ],
+            [
+              "Days 31 to 60",
+              "Authority",
+              "Create neighborhood pages, build citations, launch a review generation system, add schema markup and publish initial local content.",
+            ],
+            [
+              "Days 61 to 90",
+              "Growth",
+              "Expand content and FAQs, earn local links and mentions, refine pages based on data, improve conversion rates and begin AI search optimization.",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "How to Measure Success: Metrics That Actually Matter",
+        paragraphs: [
+          "Track these key performance indicators monthly:",
+        ],
+        bullets: [
+          "Map Pack and local organic rankings for your priority keywords",
+          "Google Business Profile views, calls, direction requests and website clicks",
+          "Organic traffic from New York and your target boroughs",
+          "Qualified leads (calls, forms and bookings) from organic search",
+          "Review count, average rating and review response rate",
+          "Cost per lead compared with paid channels",
+          "Lead-to-customer conversion rate and revenue from organic leads",
+        ],
+        closingParagraphs: [
+          "The right question is not “Did we rank?” but “Did search bring us customers?”",
+        ],
+      },
+      {
+        heading: "Common Local SEO Mistakes New York Businesses Make",
+        paragraphs: [],
+        bullets: [
+          "Keyword stuffing the business name on Google Business Profile",
+          "Inconsistent NAP details across directories",
+          "Using one generic location page instead of borough and neighborhood pages",
+          "Ignoring reviews or leaving them unanswered",
+          "Neglecting mobile experience",
+          "Not tracking calls and forms, so return on investment is unknown",
+          "Publishing thin or duplicated content",
+          "Expecting overnight results and quitting too early",
+        ],
+      },
+      {
+        heading: "Frequently Asked Questions",
+        paragraphs: [],
+        faqs: [
+          {
+            question: "What are local SEO services in New York?",
+            answer:
+              "Local SEO services in New York help businesses appear in location-based searches on Google Search and Google Maps. They typically include Google Business Profile optimization, citation building, review management, local landing pages, technical SEO and conversion tracking, all designed to generate calls, visits and bookings from nearby customers.",
+          },
+          {
+            question: "How much does local SEO cost for a small business in New York?",
+            answer:
+              "Costs vary based on competition, number of locations and scope of work. Many small businesses invest in monthly retainers, while some start with a one-time audit and setup project. The most useful way to evaluate cost is by comparing it to the value of leads and customers it generates. For a tailored estimate, [contact ClickAi Solutions](https://www.clickaisolutions.com/contact).",
+          },
+          {
+            question: "How long does it take for local SEO to work?",
+            answer:
+              "Most businesses begin seeing improvements in Google Business Profile visibility within one to three months, while consistent growth in organic leads often builds over three to six months. Timeframes depend on competition, current website strength and the consistency of your efforts.",
+          },
+          {
+            question: "Is Google Business Profile enough, or do I need a website too?",
+            answer:
+              "A Google Business Profile is essential, but a strong website supports it with deeper service information, trust signals and conversion paths. Together they are far more effective than either one alone, and your website is also what AI search tools use to verify your business details.",
+          },
+          {
+            question: "How do I rank in the Google Map Pack in New York?",
+            answer:
+              "Ranking in the Map Pack depends mainly on relevance, distance and prominence. Choose accurate categories, fully complete your profile, keep NAP consistent, earn genuine reviews, build quality citations and strengthen your website with local content.",
+          },
+          {
+            question: "What is the difference between SEO, AEO and GEO?",
+            answer:
+              "SEO improves rankings in traditional search results. AEO structures content to be selected as direct answers in snippets and voice search. GEO increases the chances that generative AI tools cite or recommend your business. A modern local strategy uses all three.",
+          },
+          {
+            question: "Can local SEO generate qualified leads without paid ads?",
+            answer:
+              "Yes. Local SEO delivers organic lead generation by attracting people who are actively searching for your service in your area. While it takes time to build, it can reduce reliance on paid advertising and lower your long-term cost per lead.",
+          },
+        ],
+      },
+      {
+        heading: "Ready to Turn Local Searches into Qualified Leads?",
+        paragraphs: [
+          "If you are a New York small business owner who wants more calls, bookings and customers from Google, you do not have to figure it out alone.",
+          "**ClickAi Solutions** helps New York businesses build a complete local SEO growth system, from Google Business Profile optimization and local search optimization to AI-ready content and lead tracking.",
+          "**Book your free local SEO audit:** [Contact ClickAi Solutions](https://www.clickaisolutions.com/contact).",
+          "**Explore our services:** [Local SEO Services](https://www.clickaisolutions.com/services/local-seo) | [Google Business Profile Optimization](https://www.clickaisolutions.com/services/google-business-profile-optimization) | [SEO for Small Businesses](https://www.clickaisolutions.com/services/small-business-seo)",
+        ],
+        bullets: [
+          "A free local SEO and Google Business Profile audit",
+          "A custom 90-day growth roadmap for your business",
+          "Transparent reporting focused on leads, not just rankings",
+          "Strategy built for traditional search and AI search",
         ],
       },
     ],
