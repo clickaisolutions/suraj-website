@@ -1475,6 +1475,20 @@ img {
   width: min(100%, 1060px);
   aspect-ratio: 2.05;
   margin: 42px auto 0;
+}
+
+.blog-image-credit {
+  width: min(100%, 1060px);
+  margin: 8px auto 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+}
+
+.blog-image-credit a {
+  color: var(--blue-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
   border-radius: 8px;
 }
 
