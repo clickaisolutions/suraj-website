@@ -2,6 +2,16 @@
 
 import { useState, type FormEvent } from "react";
 
+declare global {
+  interface Window {
+    oaiq?: (
+      action: "measure",
+      eventName: "lead_created",
+      properties: { type: "customer_action" },
+    ) => void;
+  }
+}
+
 type SubmissionState = {
   type: "success" | "error";
   message: string;
@@ -36,6 +46,11 @@ export default function ContactForm() {
         type: "success",
         message: "Thanks for reaching out. Our team will be in touch soon.",
       });
+      try {
+        window.oaiq?.("measure", "lead_created", { type: "customer_action" });
+      } catch (error) {
+        console.error("Lead conversion tracking failed.", error);
+      }
     } catch (error) {
       setSubmissionState({
         type: "error",
