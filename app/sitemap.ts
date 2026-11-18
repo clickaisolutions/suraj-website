@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     ...blogArticles.map((article) => ({
-      url: `${siteUrl}${article.path ?? `/blog/${article.slug}`}`,
+      url: `${siteUrl}/blog/${article.slug}`,
       lastModified: article.dateValue,
       priority: 0.7,
     })),

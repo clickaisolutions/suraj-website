@@ -2,46 +2,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import { blogArticles } from "../blog-data";
 import { BlogImage } from "../blog-image";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://clickaisolutions.in";
 
 type BlogArticlePageProps = PageProps<"/blog/[slug]">;
-
-function renderArticleText(text: string, richText = false): ReactNode {
-  if (!richText) {
-    return text;
-  }
-
-  return text
-    .split(/(\*\*.+?\*\*|\[[^\]]+\]\([^)]+\))/g)
-    .map((part, index) => {
-      if (part.startsWith("**") && part.endsWith("**")) {
-        return <strong key={`${index}-${part}`}>{part.slice(2, -2)}</strong>;
-      }
-
-      const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-      if (linkMatch) {
-        const [, label, href] = linkMatch;
-        const isExternal = /^https?:\/\//.test(href);
-
-        return (
-          <a
-            href={href}
-            key={`${index}-${part}`}
-            rel={isExternal ? "noopener noreferrer" : undefined}
-            target={isExternal ? "_blank" : undefined}
-          >
-            {label}
-          </a>
-        );
-      }
-
-      return part;
-    });
-}
 
 export function generateStaticParams() {
   return blogArticles.map(({ slug }) => ({ slug }));
@@ -55,8 +21,6 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
     return { title: "Article not found" };
   }
 
-  const articlePath = article.path ?? `/blog/${article.slug}`;
-
   return {
     title: article.metaTitle
       ? { absolute: article.metaTitle }
@@ -64,13 +28,13 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
     description: article.metaDescription ?? article.excerpt,
     keywords: article.keywords,
     alternates: {
-      canonical: `${siteUrl}${articlePath}`,
+      canonical: `${siteUrl}/blog/${article.slug}`,
     },
     openGraph: {
       title: article.metaTitle ?? article.title,
       description: article.metaDescription ?? article.excerpt,
       type: "article",
-      url: `${siteUrl}${articlePath}`,
+      url: `${siteUrl}/blog/${article.slug}`,
       publishedTime: article.dateValue,
       images: [
         { url: article.socialImage ?? article.image, alt: article.imageAlt },
@@ -117,8 +81,7 @@ async function BlogArticleContent({
   }
 
   const relatedArticles = blogArticles.filter((item) => item.slug !== article.slug);
-  const articlePath = article.path ?? `/blog/${article.slug}`;
-  const articleUrl = `${siteUrl}${articlePath}`;
+  const articleUrl = `${siteUrl}/blog/${article.slug}`;
   const howToSteps = article.sections.flatMap((section) =>
     section.steps?.length
       ? section.steps.map(({ name, text }) => ({ name, text }))
@@ -143,7 +106,6 @@ async function BlogArticleContent({
             section.heading,
             ...section.paragraphs,
             ...(section.bullets ?? []),
-            ...(section.closingParagraphs ?? []),
             ...(section.steps?.flatMap(({ name, text }) => [name, text]) ?? []),
             ...(section.comparison?.rows.map((row) => row.join(": ")) ?? []),
             ...(section.faqs?.flatMap(({ question, answer }) => [question, answer]) ?? []),
@@ -154,7 +116,7 @@ async function BlogArticleContent({
           .join("\n\n"),
         author: article.author
           ? {
-              "@type": article.authorType ?? "Person",
+              "@type": "Person",
               name: article.author,
             }
           : {
@@ -177,27 +139,6 @@ async function BlogArticleContent({
           { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
         ],
       },
-      ...(article.path
-        ? [
-            {
-              "@type": "LocalBusiness",
-              "@id": `${siteUrl}/#localbusiness`,
-              name: "ClickAi Solutions",
-              url: siteUrl,
-              email: "clickaisolutions@gmail.com",
-              telephone: "+91 8055035039",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Nashik",
-                addressRegion: "Maharashtra",
-                addressCountry: "IN",
-              },
-              parentOrganization: {
-                "@id": `${siteUrl}/#organization`,
-              },
-            },
-          ]
-        : []),
       ...(howToSteps.length
         ? [
             {
@@ -274,18 +215,6 @@ async function BlogArticleContent({
             src={article.image}
           />
         </div>
-        {article.imageCredit && (
-          <p className="blog-image-credit">
-            Photo:{" "}
-            <a
-              href={article.imageCredit.href}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {article.imageCredit.label}
-            </a>
-          </p>
-        )}
 
         <div className="blog-article-layout">
           <aside aria-label="Article overview" className="blog-article-aside">
@@ -303,9 +232,7 @@ async function BlogArticleContent({
               <h2>Key takeaways</h2>
               <ul>
                 {article.takeaways.map((takeaway) => (
-                  <li key={takeaway}>
-                    {renderArticleText(takeaway, article.richText)}
-                  </li>
+                  <li key={takeaway}>{takeaway}</li>
                 ))}
               </ul>
             </div>
@@ -315,10 +242,10 @@ async function BlogArticleContent({
             {article.quickAnswer && (
               <aside className="blog-quick-answer" aria-label="Quick answer">
                 <h2>Quick Answer</h2>
-                <p>{renderArticleText(article.quickAnswer, article.richText)}</p>
+                <p>{article.quickAnswer}</p>
               </aside>
             )}
-            <p>{renderArticleText(article.intro, article.richText)}</p>
+            <p>{article.intro}</p>
             {article.slug === "sitecore-vs-umbraco-enterprise-security-scalability" && (
               <p className="blog-platform-links">
                 Official platform websites:{" "}
@@ -336,32 +263,21 @@ async function BlogArticleContent({
               <section id={`section-${index + 1}`} key={section.heading}>
                 <h2>{section.heading}</h2>
                 {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>
-                    {renderArticleText(paragraph, article.richText)}
-                  </p>
+                  <p key={paragraph}>{paragraph}</p>
                 ))}
                 {section.bullets && (
                   <ul>
                     {section.bullets.map((bullet) => (
-                      <li key={bullet}>
-                        {renderArticleText(bullet, article.richText)}
-                      </li>
+                      <li key={bullet}>{bullet}</li>
                     ))}
                   </ul>
                 )}
-                {section.closingParagraphs?.map((paragraph) => (
-                  <p key={paragraph}>
-                    {renderArticleText(paragraph, article.richText)}
-                  </p>
-                ))}
                 {section.steps && (
                   <ol>
                     {section.steps.map((step) => (
                       <li key={step.name}>
-                        <strong>
-                          {renderArticleText(step.name, article.richText)}
-                        </strong>
-                        <p>{renderArticleText(step.text, article.richText)}</p>
+                        <strong>{step.name}</strong>
+                        <p>{step.text}</p>
                       </li>
                     ))}
                   </ol>
@@ -390,10 +306,8 @@ async function BlogArticleContent({
                 )}
                 {section.faqs?.map((faq) => (
                   <div className="blog-faq" key={faq.question}>
-                    <h3>
-                      {renderArticleText(faq.question, article.richText)}
-                    </h3>
-                    <p>{renderArticleText(faq.answer, article.richText)}</p>
+                    <h3>{faq.question}</h3>
+                    <p>{faq.answer}</p>
                   </div>
                 ))}
                 {section.links && (
@@ -414,14 +328,12 @@ async function BlogArticleContent({
               </section>
             ))}
 
-            {!article.hasCustomCallToAction && (
-              <div className="blog-article-cta">
-                <p>Want to put these ideas to work for your business?</p>
-                <Link className="button button-primary" href="/contact">
-                  Talk with our team <span aria-hidden="true">↗</span>
-                </Link>
-              </div>
-            )}
+            <div className="blog-article-cta">
+              <p>Want to put these ideas to work for your business?</p>
+              <Link className="button button-primary" href="/contact">
+                Talk with our team <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
           </div>
         </div>
       </article>
@@ -434,7 +346,7 @@ async function BlogArticleContent({
               <Link
                 aria-label={`Read ${relatedArticle.title}`}
                 className="blog-card-image"
-                href={relatedArticle.path ?? `/blog/${relatedArticle.slug}`}
+                href={`/blog/${relatedArticle.slug}`}
               >
                 <BlogImage
                   alt={relatedArticle.imageAlt}
@@ -449,18 +361,12 @@ async function BlogArticleContent({
                 <span>{relatedArticle.readTime}</span>
               </div>
               <h3>
-                <Link
-                  className="blog-title-link"
-                  href={relatedArticle.path ?? `/blog/${relatedArticle.slug}`}
-                >
+                <Link className="blog-title-link" href={`/blog/${relatedArticle.slug}`}>
                   {relatedArticle.title}
                 </Link>
               </h3>
               <p>{relatedArticle.excerpt}</p>
-              <Link
-                className="blog-read-link"
-                href={relatedArticle.path ?? `/blog/${relatedArticle.slug}`}
-              >
+              <Link className="blog-read-link" href={`/blog/${relatedArticle.slug}`}>
                 Read the article <span aria-hidden="true">↗</span>
               </Link>
             </article>
